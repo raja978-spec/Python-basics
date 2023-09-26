@@ -1414,9 +1414,9 @@ def bitInsertion(x, y, a, b):
     # write your code here
     # return an integer denoting the result of inserting Y in X starting from A and ending at B
     BinX=''.join(bin(x)[2:])
-    Biny=''.join(bin(y)[2:])
-
-    BinX.remove(BinX[-b:-a])
+    Biny=list(bin(y)[2:])
+    for i in range(-b,-a-1):
+      print(i)
+      BinX.replace(BinX[i]," ")
     print(BinX)
-
 bitInsertion(1536,7,1,5)
