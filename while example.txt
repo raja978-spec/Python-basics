@@ -1,0 +1,15 @@
+while loop:Write a Python program to print all natural numbers from 1 to n using a while loop.
+Write a Python program to print all natural numbers in reverse (from n to 1) using a while loop.
+Write a Python program to print all alphabets from 'a' to 'z' using a while loop.
+Write a Python program to print all even numbers between 1 and 100 using a while loop.
+Write a Python program to print all odd numbers between 1 and 100.
+Write a Python program to find the sum of all natural numbers between 1 and n.
+Write a Python program to find the sum of all even numbers between 1 and n.
+Write a Python program to find all factors of a number.
+Write a Python program to find the HCF (GCD) of two numbers.
+Write a Python program to print the Fibonacci series up to n terms.
+reverse program 
+1.Exapmle: a="welcome"
+output: emoclew
+2.Example: a=123
+output:321

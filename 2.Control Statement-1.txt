@@ -1,0 +1,459 @@
+   -----------------------Control Statement--------------------
+Control statement are used to control the flow of the execution of the loop based on a condition.
+if
+for loop
+while loop
+
+-----------------------If and elif and else------------------
+
+ 	If and elif and else are conditional statements that provide you with the decision making 
+that is required when you want to execute code based on a particular condition. 
+The if… elif…else statement used in Python helps automate that decision making process.
+
+--------------------Syntax for "if":-----------------------
+
+if condition:
+	true statement
+other statements
+
+E.g--------------------------------------------------
+a=19
+if a>=18:
+    print("you can apply")
+print("operation completed")
+
+---------------------Syntax for "if and else":-------------------
+
+ if condition:
+	true statement
+else:
+	false statement
+other statements
+
+E.g-----------------------------------------------
+
+a=17
+if a>=18:
+    print("you can apply")
+else:
+    print("you can't apply")
+print("operation completed")
+
+------------------------Syntax for "elif":------------------------
+
+if condition:
+	true statement
+elif condition:
+	true statement
+else:
+	false statement 
+other statements
+
+E.g-------------------------------------------
+
+age =42
+if age >=1 and age <=17:
+    print("you can't apply")
+elif age >=18 and age <=40:
+    print("you can apply")
+else:
+    print("invalid age")
+print("operation completed")
+
+E.G--------------------------------------
+
+age =61
+if age >=1 and age <=17:
+    print("you can't apply")
+elif age >=18 and age <=40:
+    print("you can apply")
+elif age >=41 and age <=60:
+    print("you")
+else:
+    print("invalid age")
+print("operation completed")
+
+
+---------------------------------------
+
+num=int(input("Enter a number"))
+print("Even number")if num%2==0 else print("odd number")
+
+----------------------Syntax for "Nested if":-----------------------
+
+if condition 1:
+	true statement
+	if condition 2:
+		true statement
+	else:
+		false statement
+else:
+	false statement 
+other statements
+
+E.g------------------------------------------------
+
+no=11
+if no%3==0 or no%5==0:
+    if no%3==0 and no%5==0:
+        print("It's Div for 3 and 5")
+    elif no%3==0:
+        print("It's Div for 3")
+    else:
+        print("It's Div for 5")
+else:
+    print("not div by 3 and 5")
+
+E.g----------------------------------------------------
+
+a=int(input("enter the A value:"))
+b=int(input("enter the B value:"))
+if(a!=b):
+    print("value A is not equal to B.")
+    if(a>b):
+        print("A is greater than B")
+    else:
+        print("B is greater then A")
+else:
+    print("A is Equal to value B")
+
+E.g-------------------------------------------------------
+
+a=int(input("enter the A value:"))
+b=int(input("enter the B value:"))
+c=int(input("enter the C value:"))
+if(a>b):
+    if(a>c):
+       	print("A is Biggest value")
+    else:
+        print("C is Biggest value")
+elif(b>a):
+    if(b>c):
+        print("B is Biggest value")
+    else:
+        print("C is Biggest value")
+ 
+
+------------------While loop:----------------------
+1]Break Statement
+2]continue Statement
+3]Pass Statement
+4]Nested while
+
+what is the while loop?
+Python while loop is used to run a block code until a certain condition is met.
+
+while True:
+    print("While loop.")
+
+---------------------------------------- 
+
+i=5
+while i<10:
+    print(i)
+    i+=1
+
+-------------------------------------------
+
+i=1
+while i<10:
+    print(i)
+    if i==5:
+        break
+    i+=1
+
+----------------------------------------------
+
+i=0
+while i<10:
+    i+=1
+    if i==5:
+        continue
+    print(i)
+
+--------------------------
+
+i=0
+while i<10:
+    i+=1
+    if i==5:
+        pass
+    print(i)
+    
+
+E.g-------------------------------------------------
+
+counter=1
+while counter<=5:
+    print("While loop.")
+    counter+=1
+-------------------------------------------
+
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+E.g----------------Nested while----------------------
+
+counter=1
+while counter<=5:
+    print("While loop.")
+    newcounter=1
+    while newcounter<=5:
+        print("loop")
+        newcounter+=1
+    counter+=1
+
+-------------------For loop-----------------------
+1]Break Statement
+2]continue Statement
+3]Pass Statement
+4]Nested For Loop
+
+A for loop is used for iterating over a sequence.
+
+list=["1","2","3","4","5","6"]
+for i in list:
+    print(i)
+
+-----------------------------------------
+#str=['k','u','m',1,2,3]
+for i in "kumar":
+    print(i)
+
+------------------------------------------
+
+list=["kumar","raja","sam","ram"]
+for i in list:
+    print(i)
+    if i =="sam":
+        break
+
+--------------------------------------------
+
+list=["kumar","raja","sam","ram"]
+for i in list:
+    if i =="sam":
+        continue
+    print(i)
+ 
+--------------------Nested For Loop-------------------------
+
+list1=["kumar","raja","sam","ram"]
+list2=["1","2","3","4","5","6"]
+for a in list1:
+    for b in list2:
+        print(a,b)
+
+-----------------------------------------------
+
+for i in range(10):
+    print(i)
+
+--------------------------------
+
+for i in range(1,11):
+    print(i)
+--------------------------------
+
+for i in range(1,11,2):
+    print(i)
+
+--------------------------------
+`
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+	print(thislist[i])
+
+-------------------------------
+ 
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+E.g-- lenth-------------------------------------------------
+
+a="welcome to for loop"
+for i in range(len(a)):
+    print(i) 
+
+E.g--------------------------------------------------
+
+for a in 'Testing':
+    if a =='i':
+        continue
+    print("string list",a)
+
+E.g---------------------------------------------------
+
+for a in [1,2,3,4,5,6,7,8,9,10]:
+    if a%3 ==0:
+        continue
+    print(a)
+
+E.g---------------Reverse program----------------------------
+
+a="sakthi" 
+b=""
+for i in a:
+    b=i+b
+print(b)
+------------
+a="'1','3','4','2'"  
+b=""
+for i in a:
+    b=i+b
+print(b)
+------------------Remove Duplicate---------------------------
+
+list=['l','k','s','l','m','k','m']
+x=[]
+for i in list:
+    if i not in x:
+        x.append(i)
+print(x)
+
+
+#x=['l','k','s','l','m','k','m']
+#y=list(dict.fromkeys(x).keys())
+#print(y)
+
+E.g--------------Pattern program----------------
+
+for i in range(0,5):
+    for j in range(0,i+1):
+        print("*",end="")
+    print("")
+
+---------------------------MIN AND MAX------------------------------
+
+number = [5, 2, 8, 1, 6, 100]
+minimum = number[0]
+maximum = number[0]
+for a in number:
+    if a < minimum: 
+        minimum = a 1
+    if a > maximum:
+        maximum = a 100
+print("Minimum number:", minimum)
+print("Maximum_value:", maximum)
+
+---------------------------------------------
+
+list1=[1,8,3,4,9,6,7,5]
+
+for i in range(len(list1)):
+    for j in range(i+1,len(list1)):
+        if list1[i] >= list1[j]:
+            list1[i],list1[j]=list1[j],list1[i]
+print(list1)
+
+------------------------------------------------
+Write a python program to sum the multiples of 3 and 5 under 10.
+Output is 23
+
+E.g --------Continue Statement--------------
+
+i=0
+while i<10:
+    i+=1
+    if i==5:
+        continue
+    print(i)
+
+------------Break Statement------------------
+E.g
+
+i=0
+while i<10:
+    print(i)
+    i+=1
+    if i==6:
+        break
+print("break")
+
+---------------------------------------
+
+i=0
+while i<10:
+    print(i)
+    i+=1
+    if i==6:
+        print("enter the break")
+        break
+        print("after break")
+print("E.G break")
+
+----------------------The pass Statement----------------------
+
+function definitions cannot be empty, but 
+if you for some reason have a function definition with no content,
+put in the pass statement to avoid getting an error
+
+E.q
+
+for i in range(8):
+    if i==4:
+        pass
+        print("pass function")
+    print("i value",i)
+
+---------------------------------------------
+
+while True:
+    print('Welcome to Sports Club Management System')
+    print('1. Registration - New Membership')
+    print('2. Modification of Members Information ')
+    print('3. Deletion of Record of Non-Existent Members')
+    print('4. Searching for Information of a Specific Member')
+    print('5. Create Fees Record')
+    print('6. Create Facility Record')
+    print('0. Exit')
+    ch = input('Your Choice [1-6] :')
+
+    if ch == '0': break
+
+    if ch == '1':
+        print("1")
+
+    if ch == '2':
+        print("2")
+
+    if ch == '3':
+        print("3")
+
+    if ch == '4':
+        print("4")
+
+    if ch == '5':
+        print("5")
+
+    if ch == '6':
+        print("6")
+
+------------------------------
+while True:
+    def aaa1():
+        print("hello1")
+    def aaa2(): 
+        print("hello2")
+    def aaa3():
+        print("hello3")
+    print("1]AAA1")
+    print("2]AAA2")
+    print("3]AAA3")
+    a=input("enter AAA")
+    if a=='1':
+        aaa1()
+    if a == '2':
+        aaa2()
+    if a == '3':
+        aaa3()
+
+-----------------------------------------
+
+
+
+
+

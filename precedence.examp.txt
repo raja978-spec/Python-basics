@@ -1,0 +1,8 @@
+result = 10 + 5 * 2  # Multiplication (*) has higher precedence than addition (+)
+print(result)  # Output: 20 (5*2 = 10, then 10+10 = 20)
+
+result = (10 + 5) * 2  # Parentheses () change the order
+print(result)  # Output: 30 (10+5 = 15, then 15*2 = 30)
+
+result = 2 ** 3 ** 2  # Exponentiation is evaluated from right to left
+print(result)  # Output: 512 (3**2 = 9, then 2**9 = 512)
