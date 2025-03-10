@@ -1,0 +1,153 @@
+1)Python program to interchange first and last elements in a list
+
+lst = [1,2,4,5,6,7]
+
+first_element = lst[0]
+last_element = lst.pop()
+
+lst[0] = last_element
+last_element_insert_index = len(lst)
+lst.insert(last_element_insert_index, first_element)
+
+print(lst)
+
+-----------------------------------------------------------------
+
+2)Python program to swap two elements in a list
+
+Swapped middle element with last element
+last element with middel element
+
+lst=["C.raja","e.ram","a.kumar","b.sam","D.arun","9"]
+print('orginal array: ', lst)
+
+list_last_element = lst[len(lst)-1]
+list_middel_element = lst[len(lst)//2]
+
+lst[len(lst)-1] = list_middel_element
+lst[len(lst)//2] = list_last_element
+
+print('swapped array', lst)
+
+----------------------------------------------------------------------------------
+
+3)Python – Swap elements in String list
+
+Swapped middel element with first element
+first element with middel element
+
+lst=["C.raja","e.ram","a.kumar","b.sam","D.arun","9"]
+print('orginal array: ', lst)
+
+list_first_element = lst[0]
+list_middel_element = lst[len(lst)//2]
+
+lst[0] = list_middel_element
+lst[len(lst)//2] = list_first_element
+
+print('swapped array', lst)
+
+----------------------------------------------------------------------------------------------------
+
+4)Maximum of two numbers in Python
+5)Minimum of two numbers in Python
+
+lst = [23232443,123324]
+lst.sort()
+min= lst[0]
+lst.sort(reverse=True)
+max=lst[0]
+
+print('Min and Max values for two number',min, max)
+
+------------------------------------------------------------------------------------------------------------
+
+6)Python Program to find sum and average of List in Python
+
+lst = [20,45,52,42,35]
+sum = 0
+avg = 0
+
+for i in lst:
+    sum+=i
+avg = sum / len(lst)
+
+print("Sum and Avg", sum, avg)
+
+-----------------------------------------------------------------------------------------------------
+
+7)Python program to find smallest number in a list
+8)Python program to find largest number in a list
+
+APPROACH 1:
+
+lst = [45,52,20,42,35]
+lst.sort()
+print('Smallest no from list is', lst[0])
+lst.sort(reverse=True)
+print('Highest no from list is', lst[0])
+
+
+APPROACH 2:
+
+lst = [45,52,20,42,35]
+min,max=lst[0],lst[1]
+
+for i in lst:
+    if i<min:
+        min = i
+    elif i>max:
+        max = i
+    print(i, min, max)
+
+print(min,max)
+
+--------------------------------------------------------------------------------------------------------
+
+9)Python program to find second largest number in a list
+
+lst = [45,52,20,42,35]
+lst.sort(reverse=True)
+print('Second largest element is', lst[1])
+
+-------------------------------------------------------------------------------------------------------------
+
+10)Python program to print all even numbers in a range
+11)Python program to print all odd numbers in a range
+
+lst = [45,52,20,42,35]
+for i in lst:
+    if i%2 == 0:
+        print(i, 'is even')
+    elif i%2 != 0:
+        print(i, 'is odd')
+--------------------------------------------------------------------------------------------------------------------
+
+12)Python program to print all positive numbers in a range
+13)Python program to print all negative numbers in a range
+
+lst = [45,-52,20,-42,-35]
+for i in lst:
+    if i >= 0:
+        print(i, 'is positive')
+    else:
+        print(i, 'is negative')
+
+------------------------------------------------------------------------------------------------------------------------
+14)Python program to count positive and negative numbers in a list
+
+lst = [45,-52,20,-42,-35]
+pos_count, neg_count = 0,0
+for i in lst:
+    if i > 0: pos_count+=1
+    elif i < 0 : neg_count+=1
+print('Count of positive and negative no is', pos_count, neg_count)
+
+-------------------------------------------------------------------------------------------------------------------------------
+15)Python Program to print duplicates from a list of integers
+
+lst = [45,-42,-52,-42,35,20,-42,-35]
+for i in lst:
+    if lst.count(i) > 1:
+        print(i,"is duplicate element")
+

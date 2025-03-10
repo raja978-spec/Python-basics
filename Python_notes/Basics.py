@@ -2217,11 +2217,75 @@ for i in range(10,0, -2):
 #     LIST METHOD
 # Collction of unsimilar data types
 '''
-1. clear - clears items returns empty
-2. extend - allows to add more than one element
-3. append - allows single element
-4. insert - add element in specified index
-5. pop - removes last element and specified index element
-6. removes - removes specified value
-7. sort - if reverse=True orders desceding
+1. clear - clears items from original array and returns None
+2. extend - allows to add more than one element in existing
+            array, returns None
+3. append - allows single element, returns None
+4. insert - add element in specified index, not replaces a element
+            it adds element in existing array, returns None
+5. pop - removes last element and specified index element, 
+         removes element from original list returns the
+         removed element
+6. removes - removes specified value from original array, 
+             it removes only the first occurance, returns None
+7. sort - if reverse=True orders desceding, sort original array
+          returns None
+8. count - returns the count of all occurances of a specified element
+9. copy - returns new copied array
+
+                     ORDERED DATA TYPE
+a=['2',1,5,6]
+print(a)
+OUTPUT: ['2',1,5,6] Order of the data will not change while print  
+
+
+                     ALLOWS DUPLICATE         
+a=['2',1,5,6,1,1]
+print(a)
+
+OUTPUT: ['2',1,5,6,1,1] 
+
+                           COUNT
+                           
+a=['2',1,5,6,1,1]
+print(a.count()) # 3
+
+
 '''
+
+'''
+1)Python program to interchange first and last elements in a list
+2)Python program to swap two elements in a list
+3)Python – Swap elements in String list
+4)Maximum of two numbers in Python
+5)Minimum of two numbers in Python
+6)Python Program to find sum and average of List in Python
+7)Python program to find smallest number in a list
+8)Python program to find largest number in a list
+9)Python program to find second largest number in a list
+10)Python program to print all even numbers in a range
+11)Python program to print all odd numbers in a range
+12)Python program to print all positive numbers in a range
+13)Python program to print all negative numbers in a range
+14)Python program to count positive and negative numbers in a list
+15)Python Program to print duplicates from a list of integers
+'''
+
+lst = [45,-42,-52,-42,35,20,-42,-35]
+for i in lst:
+    if lst.count(i) > 1:
+        print(i,"is duplicate element")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
