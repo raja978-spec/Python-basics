@@ -41,6 +41,7 @@
                 * Muttable 
 '''
 
+
 #          KEYWORD PACKAGE
 '''
 from keyword import kwlist
@@ -1052,6 +1053,83 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
  finally:
   if os.remove is True:
     print('File removed')
+'''
+
+#          FILE COMMANDS FOR UNIX LINUX
+'''
+
+# Displays working dir path
+
+import os
+print(os.system('pwd')) # pwd (print working directory) 
+
+# appends text to a file because it has the correct permissions.
+result = os.system("echo 'Hello, World! 🌍' > hello_world.txt")
+print(f"Exit status: {result}")
+
+OUTPUT: Exit status: 0 (0 indicts that the command executed without error
+                        if a command has problem it will return
+                        Exit status: 63253
+                        )
+
+# changing file permission
+
+Let's change the file permissions to make the file read-only. 
+The command only display a non-zero exit status code, 
+indicating that it successfully changed the permissions.
+
+os.system("chmod 444 hello_world.txt")
+OUTPUT: 0
+
+Now when we attempt to modify the file, it won't work because 
+the necessary permissions are denied. This is also verified 
+by the non-zero exit status code.
+
+os.system("echo 'Good night, moon! 🌑' >> hello_world.txt")
+
+OUTPUT:
+sh: 1: cannot create hello_world.txt: Permission denied
+512
+
+We can change the file permissions to grant the 
+necessary rights to perform the action, allowing us to run the commands successfully
+
+os.system("chmod 666 hello_world.txt")
+os.system("echo 'Good night, moon! 🌑' >> hello_world.txt")
+
+
+# Remove file
+os.system("rm -f 'application.log'")
+# Create new file
+os.system("touch 'application.log'")
+# Append entry to log file
+os.system("echo 'Log entry 1' >> application.log")
+# Append another entry to log file
+os.system("echo 'Log entry 2' >> application.log")
+# Display file contents
+os.system("cat application.log")
+# Change permissions to remove read access
+os.system("chmod 000 application.log")
+# Try to display file contents
+os.system("cat application.log")
+
+
+                            Capturing Output of System Commands
+
+os.system is a useful choice for commands that don't require using 
+any of the resulting output. However, sometimes it is helpful to 
+capture the output of a command for later use. If you want to use the 
+output later, subprocess.run is a better choice.
+
+We can use subprocess.run to capture the output of ls.
+
+import subprocess
+
+result = subprocess.run(["ls"], capture_output=True, text=True)
+
+print("Output of 'ls':")
+print(result.stdout)
+
 '''
 
 #         ACCESSING PARENTS MEMBER
@@ -2136,16 +2214,14 @@ for i in range(10,0, -2):
                
 '''
 
-#Python program to check if a given number is an Armstrong number
-
-no1 = input("Enter no: ")
-power = len(no1)
-no2 = 0
-
-for i in no1:
-    no2 += int(i)**power
-
-if int(no1) == no2:
-    print(no1, "is a armstrong number")
-else:
-    print(no1, 'is not a armstrong number')
+#     LIST METHOD
+# Collction of unsimilar data types
+'''
+1. clear - clears items returns empty
+2. extend - allows to add more than one element
+3. append - allows single element
+4. insert - add element in specified index
+5. pop - removes last element and specified index element
+6. removes - removes specified value
+7. sort - if reverse=True orders desceding
+'''

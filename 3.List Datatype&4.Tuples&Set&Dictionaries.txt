@@ -1,0 +1,605 @@
+ Datatype:
+
+List Datatype         []    Its allow duplicate value
+Set Datatype          {}    Its not allow duplicate value
+Dictionary Datatype   {}    Its not allow duplicate value
+Tuple Datatype        ()    Its allow duplicate value
+String Datatype       ""    Its allow duplicate value
+
+1]List Datatype:
+
+Its allow duplicate value
+
+List      -[]
+integer   -[10,20,30]
+Float     -[1.1,1.2,1.3]
+Character -['A','b','c']
+String    -["Ram",Raja,Sam]
+
+append()
+clear()
+copy()
+count()
+extend()
+index()
+insert()
+pop()
+remove()
+reverse()
+sort()
+
+
+-------------LIST---------------
+
+lst=[10,2.0,'S',"ram"]
+print("List",lst)
+
+-------------------------------------
+
+lst=[10,20,30,40]
+lst.append(60)
+print(lst)
+
+lst.clear()
+print("clear:",lst)
+
+lst=[10,20,30,40]
+cpy=lst.copy()
+print(cpy)
+
+lst=[10,20,30,40,10,50,10,60,10,10]
+c=lst.count(10)
+print(c)
+
+lst1=[10,20,30,40]
+lst2=[50,60,70,80]
+lst1.extend(lst2)
+print(lst1)
+
+lst=["raja","ram","kumar"]#[0,1,2]
+inx=lst.index("kumar")
+print(inx)
+
+lst=["raja","ram","kumar"]#[0,1,2]
+lst.insert(2,"sam")
+print(lst)
+
+lst=["raja","ram","kumar"]#[0,1,2]
+lst.pop(1)
+print(lst)
+
+lst=["raja","ram","kumar"]
+lst.remove("kumar")
+print(lst)
+
+lst=["raja","ram","kumar"]
+lst.reverse()
+print(lst)
+
+lst=["C.raja","e.ram","a.kumar","b.sam","D.arun","9","1"]
+lst.sort()
+print(lst)
+
+
+
+
+-----------------------------------------------------------
+
+lst=["raja","ram","kumar","sakthi"]
+x =lst.pop()
+print(lst)
+print(x)
+
+----------------------------Set Datatype:-------------------------------
+Its not allow duplicate value
+
+Set - {}
+integer   -{10,20,30}
+Float     -{1.1,1.2,1.3}  
+Character -{'A','b','c'}
+String    -{"Ram",Raja,Sam}
+
+Set Function:
+add()
+copy()
+update()
+remove()
+clear()
+discard()
+pop()
+intersection()
+difference()
+issubset()
+issuperset()
+isdisjoint()
+union()
+  
+----------------------------Set----------------------------
+
+st={10,2.0,'S',"ram"}
+print("Set",st)
+
+------------------------------------------------------------
+st={10,20,30,40} 
+st.add(50)
+print("add",st)
+
+st={10,20,30,40}
+c=st.copy()
+print("copy",c)
+
+st1={10,20,30,40}
+st2={"raja","ram","kumar"}
+st1.update(st2)
+print("update",st1)
+
+st={10,20,30,40}  # string
+st.remove(30)
+print("remove",st)
+
+st={10,20,30,40}
+st.clear()
+print("clear",st)
+
+st={10,20,30,40}
+st.discard(40)
+print("discard",st)
+
+st={"raja","ram","kumar","sakthi"}
+st.pop()
+print("pop",st)
+
+a={5,2,8,9}
+b=a.intersection({8})
+print(b)
+
+a={5,2,8,9}
+b=a.difference({8,2})
+print(b)
+
+a={5,2,8,9}
+b=a.issubset({8,2,5,9})
+print(b)
+
+a={5,2,8,9}
+b=a.issuperset({1})
+print(b)
+
+a={5,2,8,9}
+b=a.isdisjoint({5})
+print(b)
+
+a={3,4,5,2,1,"B","a","C"}
+b=a.union()
+print(b)
+
+------------------------Dictionary Datatype---------------------------
+
+Its not allow duplicate value
+dic={}
+dic={"key":"value"}
+ 
+Dictionary Functions:
+
+keys()
+values()
+get()
+items()
+clear()
+copy()
+pop()
+update()
+
+dic={"Name":"sakthi","age":"23"}
+print("Dictionary",dic)
+
+--------------------------------------------------
+
+dic={"Name":"sakthi","age":"23"}
+c=dic.keys()
+print(c)
+
+dic={"Name":"sakthi","age":"23"}
+c=dic.values()
+print(c)
+
+dic={"Name":"sakthi","age":"23"}
+c=dic.get("Name")
+print("Get",c)
+
+dic={"Name":"sakthi","age":"23"}
+c=dic.items()
+print(c)
+
+dic={"Name":"sakthi","age":"23"}
+c=dic.clear()
+print("Clear",c)
+
+dic={"Name":"sakthi","age":"23"}
+c=dic.copy()
+print("Cope",c)  
+
+dic={"Name":"sakthi","age":"23"}
+dic.pop("age")
+print("Pop",dic)
+
+dic={"Name":"sakthi","age":"23"}
+dic.update({"add":"cbe","age":"25"})
+print("Update",dic)
+
+dic={"Name":"sakthi","age":"23"}
+dic['age']=22
+dic['Name']='sam'
+print(dic)
+
+--------------------Tuple Datatype----------------------
+
+Tuple -()
+
+Its allow Duplicate value
+
+Tuple function type:
+slice()
+Count()
+Index()
+len()
+max()
+min()
+
+tpl=(1,1.2,'A',"sakthi")
+print("Tuple",tpl)
+
+-------------------------------------------------------
+
+x=("a","b","c","d","e","f")
+y=slice(3)
+print(x[y])
+
+x=["a","b","c","d","e","f"]
+y=slice(3)
+z=slice(1)
+print(x[y])
+print(x[z])
+
+tpl=(8,2,8,4,8,6,7,8,9)
+c=tpl.count(8)
+print("Count",c)
+
+tpl=("a",'b','c','d','e') #(0,1,2,3,4)
+inx=tpl.index("e")
+print("Index",inx)
+
+tpl=(9,8,75,4,7,1,5)
+ma=len(tpl)
+print(ma)
+
+
+tpl=(9,8,75,4,7,1,5)
+mi=min(tpl)
+print(mi)
+
+
+tpl=(9,8,75,4,7,1,5)
+ma=max(tpl)
+print(ma)
+ 
+
+-------------------String Datatype------------------------
+Its allow duplicate value
+
+capitalize()
+lower()
+upper()
+center()
+count()
+index()
+find()
+replace()
+isalnum()
+isnumeric()
+split()
+isupper()
+islower()
+strip()
+lstrip()
+rstrip()
+title()
+
+a='hellow WORLD'
+b=a.capitalize()
+print(b)
+
+a='hellow WORLD'
+b=a.title()
+print(b)
+
+a='HELLO WORLD'
+b=a.lower()
+print(b)
+
+
+a='hello world'
+b=a.upper()
+print(b)
+
+
+a='hello'
+b=a.center(15,'*')
+print(b)
+
+
+a='HELLO WORLD'
+b=a.count('L')
+print(b)
+
+
+a='HELLO WORLD'
+b=a.index('L')
+print(b)
+
+
+a='HELLO WORLD'
+b=a.find('W')
+print(b)
+
+
+a='HELLO wORLD'
+b=a.replace('w','W')
+print(b)
+
+
+a='31/01/2023'
+b=a.split('/')
+print(b)
+
+
+a="Hello world hii"
+b=a.split()
+print(b)
+
+
+a='HELLO WORLD'
+b=a.isupper()
+print(b)
+
+
+a='HELlO WORLD'
+b=a.islower()
+print(b)
+
+
+a='03072023abcd'
+b=a.isalnum()
+print(b)
+
+a='123456'
+b=a.isnumeric()
+print(b)
+
+
+a='Hello world Hello'
+b=a.strip('Hello')
+print(b)
+
+
+---------------------Slicing-----------------------
+
+
+You can return a range of characters by using the slice syntax.
+
+Specify the start index and the end index, separated by a colon, to return a part of the string.
+
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[1:]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5:]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[:1]
+print(b)  
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[:5]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5:-2]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[1:-3]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5:-2]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5::-3]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5::-2]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5::3]
+print(b)
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5::2]
+print(b)
+
+-------------------------------------
+
+thislist = ["apple", "banana", "cherry"]
+print(thislist[-1])
+
+------------------------
+
+thislist = ["apple", "banana", "cherry"]
+thislist[1] = "blackcurrant"
+
+print(thislist)
+------------------Unpack Tuple-------------------
+
+tpl=("sam","raja","kumar")
+(a,b,c)=tpl
+print(a)
+print(b)
+print(c)
+
+------------------u 
+
+tpl=("sam","ram","kumar","sakthi")
+print(tpl)
+lis=list(tpl)
+lis[0]="gopi"
+lis[1]="raja"
+print(lis)
+tpl=tuple(lis)
+print(tpl)
+
+-----------------Loop Tuple------------------------
+
+b=(10,1.2,'A',"sam")
+for a in b:
+    print(a)
+
+------------------Join Tuple------------------------
+
+tpl1=("sam","ram","kumar")
+tpl2=("1","2","3")
+tpl3=tpl1+tpl2
+print(tpl3)
+
+-----------------------------
+
+m={1:"Jan",2:"Feb",3:"Mar",4:"April",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+
+n=int(input("Enter the month number:"))
+
+if 1 <=n <=12:
+    print("Month", n ,"is :", m.get(n))
+else:
+    print("Invalid Month")
+
+--------------------------------------------------------------
+m={1:"Jan",2:"Feb",3:"Mar",4:"April",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+
+n=int(input("Enter the month number:"))
+
+if 1 <=n <=12:
+    print(f"Month #{n} is : {m.get(n)}")
+else:
+    print("Invalid Month")
+----------------------------------------------------------
+person1 = {
+  "name": "John",
+  "age": 36,
+  "country": "Norway"}
+
+print(person1["age"])
+
+----------------------------------------
+# def print_friends_names(name1, name2, name3):
+   
+#     reversed_names = [name3, name2, name1]
+    
+#     greeting = ', '.join(["Hi " + name for name in reversed_names[:-1]])
+    
+ 
+#     final_greeting = greeting + " and " + "Hi " + reversed_names[-1]
+    
+#     print(final_greeting)
+
+# print_friends_names("Mahesh", "Suresh", "Devesh")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

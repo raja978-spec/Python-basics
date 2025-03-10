@@ -1,0 +1,571 @@
+                                           IF ELSE 
+
+1. Write a Python program to find the maximum between two numbers.
+
+n1 = int(input('n1: '))
+n2= int(input('n2: '))
+
+if n1>n2:
+    print(n1)
+elif n2>n1:
+    print(n2)
+
+
+2. Write a Python program to find the maximum between three numbers.
+
+n1 = int(input('n1: '))
+n2= int(input('n2: '))
+n3= int(input('n3: '))
+
+if n1>n2 and n1>n3:
+    print(n1)
+elif n2>n1 and n2>n3:
+    print(n2)
+elif n3>n1 and n3>n2:
+    print(n3)
+
+3. Write a Python program to check whether a number is negative, positive, or zero.
+
+n = int(input('n: '))
+
+if n>0:
+    print(n,'is positive')
+elif n<0:
+    print(n,'is negative')
+elif n == 0:
+    print(n, 'is zero')
+
+4. Write a Python program to check whether a number is divisible by both 5 and 11.
+
+n = int(input('n: '))
+
+if n%5 == 0 and n%11 == 0 :
+    print(n,'is divisable by both 5 and 11')
+else:
+    print(n,'is not divisable by both 5 and 11')
+
+
+5. Write a Python program to check whether a number is even or odd.
+
+n = int(input('n: '))
+
+if n%2 == 0:
+    print(n, 'is a even no')
+else:
+    print(n,'is a odd no')
+
+
+6. Write a Python program to check whether a year is a leap year or not.
+
+year = int(input('n: '))
+
+if (year%4 == 0 or year%400 == 0) and (year%100 != 0):
+    print(year, 'is a leap year')
+else:
+    print(year,'is not a leap year')
+
+
+7. Write a Python program to check whether a character is an alphabet or not.
+
+char = input('')
+if char >= 'a' and char <= 'z' or char >= 'A' and char <= 'Z':
+    print(char,'is alphabet')
+else:
+    print(char,'is not a alphabet')
+
+8. Write a Python program to input any alphabet and check whether it is a vowel or consonant.
+
+char = input('char: ')
+vowels = ['a','e','i','o','u']
+
+if char in vowels:
+    print(char, 'is vowel')
+
+elif char not in vowels:
+    print(char, 'is consonant')
+
+
+9. Write a Python program to input any character and check whether it is an alphabet, digit, or special character.
+
+char = input('char: ')
+
+if char >= 'a' and char <= 'z':
+    print(char,'is alphabet')
+elif char in '!"$%&':
+    print(char,'is special char')
+else:
+    print(char,'is digit')
+
+10. Write a Python program to check whether a character is an uppercase or lowercase alphabet.
+
+char = input('char: ')
+
+if char >= 'a' and char <= 'z':
+    print(char,'is lower')
+else:
+    print(char,'is upper')
+
+11. Write a Python program to input a week number and print the corresponding weekday.
+
+monthno = int(input('monthno: '))
+
+if monthno==1:
+    print(31)
+if monthno==2:
+    print('28 or 29')
+if monthno==3:
+    print(31)
+if monthno==4:
+    print(30)
+if monthno==5:
+    print(31)
+if monthno==6:
+    print(30)
+if monthno==7:
+    print(31)
+if monthno==8:
+    print(31)
+if monthno==9:
+    print(30)
+if monthno==10:
+    print(31)
+if monthno==11:
+    print(30)
+if monthno==12:
+    print(31)
+
+
+12. Write a Python program to count the total number of notes in a given amount.
+
+amount = int(input('amount: '))
+notes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1]
+for note in notes:
+    if amount >= note:
+        print(note,amount // note)  
+        amount %= note 
+      
+
+13. Write a Python program to input the angles of a triangle and check whether the triangle is valid or not.
+
+a1=int(input('a1: '))
+a2=int(input('a2: '))
+a3=int(input('a3: '))
+
+if a1+a2+a3 == 180:
+    print('It is valid traingle')
+else:
+    print('not a valid triangle')
+    
+
+14. Write a Python program to input all sides of a triangle and check whether the triangle is valid or not.
+
+
+a=int(input('a: '))
+b=int(input('b: '))
+c=int(input('c: '))
+
+if (a+b)>c and (a+c)>b and (b+c)>a:
+    print('It is valid traingle')
+else:
+    print('not a valid triangle')
+
+
+
+15. Write a Python program to check whether a triangle is equilateral, isosceles, or scalene.
+
+
+a=int(input('a: '))
+b=int(input('b: '))
+c=int(input('c: '))
+
+if a==b==c:
+    print('equilateral')
+elif (a+c)>b :
+    print('scalene')
+elif (a==b) or (b==c) or (c==a):
+    print('isosceles')
+
+16. Write a Python program to find all roots of a quadratic equation.
+
+a = int(input('a: '))
+b = int(input('b: '))
+c = int(input('c: '))
+
+discriminant = b**2 - 4*a*c   
+print(discriminant)    
+
+
+17. Write a Python program to calculate profit or loss.
+ 
+buy_cost = int(input('n: '))
+sell_cost = int(input('b: '))
+
+if(buy_cost > sell_cost): print('loss')
+elif(sell_cost > buy_cost): print('profit')
+
+
+18. Write a Python program to input marks for five subjects (Physics, Chemistry, Biology, Mathematics, and Computer), calculate the percentage, and determine the grade according to the following criteria:
+Percentage >= 90% : Grade A
+Percentage >= 80% : Grade B
+Percentage >= 70% : Grade C
+Percentage >= 60% : Grade D
+Percentage >= 40% : Grade E
+Percentage < 40% : Grade F
+
+marks = []
+subjects = ['Physics', 'Chemistry', 'Biology', 'Mathematics', 'Computer']
+total_marks = 0
+
+for subject in subjects:
+    mark = int(input(f"Enter marks for {subject}: "))
+    total_marks+=mark
+    marks.append(mark)
+
+percentage = (total_marks / 500) * 100
+    
+if percentage >= 90:
+        grade = 'A'
+elif percentage >= 80:
+        grade = 'B'
+elif percentage >= 70:
+        grade = 'C'
+elif percentage >= 60:
+        grade = 'D'
+elif percentage >= 40:
+    grade = 'E'
+else:
+     grade = 'F'
+    
+print(f"Total Marks: {total_marks}/500")
+print(f"Percentage: {percentage}%")
+print(f"Grade: {grade}")
+
+
+19. Write a Python program to input the basic salary of an employee and calculate the gross salary according to the following rules:
+Basic Salary <= 10000 : HRA = 20%, DA = 80%
+Basic Salary <= 20000 : HRA = 25%, DA = 90%
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+basic_salary = int(input("basic salary: "))
+hra,da=0,0
+
+if basic_salary <= 10000:
+        hra = 0.20 * basic_salary  
+        da = 0.80 * basic_salary  
+elif basic_salary <= 20000:
+        hra = 0.25 * basic_salary  
+        da = 0.90 * basic_salary   
+else:
+        hra = 0.30 * basic_salary  
+        da = 0.95 * basic_salary 
+    
+
+gross_salary =  basic_salary + hra + da
+print(gross_salary)
+
+
+20. Write a Python program to input a month number and print the number of days in that month.
+
+month = int(input("month number: "))
+
+if month == 1:
+    print("January has 31 days.")
+elif month == 2:
+    print("February has 28 or 29 days (leap year dependent).")
+elif month == 3:
+    print("March has 31 days.")
+elif month == 4:
+    print("April has 30 days.")
+elif month == 5:
+    print("May has 31 days.")
+elif month == 6:
+    print("June has 30 days.")
+elif month == 7:
+    print("July has 31 days.")
+elif month == 8:
+    print("August has 31 days.")
+elif month == 9:
+    print("September has 30 days.")
+elif month == 10:
+    print("October has 31 days.")
+elif month == 11:
+    print("November has 30 days.")
+elif month == 12:
+    print("December has 31 days.")
+else:
+    print("Invalid month number")
+
+--------------------------------------------------------------------------------------------------
+
+                                            WHILE LOOP 
+
+1. while loop:Write a Python program to print all natural numbers from 1 to n using a while loop.
+
+no = int(input("Enter no: "))
+i=1
+while i<=no:
+    print(i)
+    i+=1
+
+2. Write a Python program to print all natural numbers in reverse (from n to 1) using a while loop.
+
+no = int(input("Enter no: "))
+i=1
+while no>=i:
+    print(no)
+    no-=1
+
+3. Write a Python program to print all alphabets from 'a' to 'z' using a while loop.
+
+alpha = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+i=0
+
+while i<= len(alpha)-1:
+    print(alpha[i])
+    i+=1
+
+4. Write a Python program to print all alphabets from 'a' to 'z' using a while loop.
+
+i=1
+while i<=100:
+    if(i%2 == 0):
+        print(i)
+    i+=1
+
+5. Write a Python program to print all odd numbers between 1 and 100.
+
+i=1
+while i<=100:
+    if(i%2 != 0):
+        print(i)
+    i+=1
+
+6. Write a Python program to find the sum of all natural numbers between 1 and n.
+
+n = int(input('n: '))
+
+i=1
+total = 0
+
+while i<=n:
+    total+=i
+    i+=1
+    
+print(total)
+
+
+7. Write a Python program to find the sum of all even numbers between 1 and n.
+
+
+n = int(input('n: '))
+
+i=1
+total = 0
+
+while i<=n:
+    if i%2 == 0:
+       total+=i
+    i+=1
+
+print(total)
+
+
+8. Write a Python program to find all factors of a number.
+
+n = int(input('n: '))
+
+i=1
+
+while i<=n:
+    if n%i == 0:
+        print(i)
+    i+=1
+
+9. Write a Python program to find the HCF (GCD) of two numbers.
+
+n1 = int(input('Enter n1: '))
+n2 = int(input('Enter n2: '))
+
+def findFactor(n):
+   f=[]
+   i=1
+   while i<=n:
+    if(n%i == 0):
+      f.append(i)
+    i+=1
+   return f
+   
+f1 = findFactor(n1)
+f2 = findFactor(n2)
+cf = []
+
+for i in f1:
+  if i in f2:
+    cf.append(i)
+    
+max = cf[0]
+min = cf[0]
+
+for i in cf:
+  if i < min:
+    min = i 
+  if i > max:
+    max = i
+
+hcf = max
+print(hcf)
+
+10. Write a Python program to print the Fibonacci series up to n terms.
+
+n=int(input('n: '))
+a,b=0,1
+
+i=0
+while i<=n:
+    print(a)
+    a,b=b, a+b 
+    i+=1
+
+11. # reverse program 
+# 1.Exapmle: a="welcome"
+# output: emoclew
+# 2.Example: a=123
+# output:321
+
+str = input('Enter str to reverse: ')
+i=0
+r=''
+while i<=len(str)-1:
+    r = str[i] + r
+    i+=1
+print(r)
+
+
+------------------------------------------------------------------------------
+
+                           FOR LOOP
+
+Example 1: Print the first 10 natural numbers using for loop.
+
+for i in range(1,10):
+    print(i)    
+
+Example 2: Python program to print all the even numbers 
+# within the given range.
+
+for i in range(1,10):
+    if(i%2 == 0):
+        print(i)   
+
+#Example 3: Python program to calculate the sum of all numbers 
+# from 1 to a given number.
+
+r=0
+for i in range(1,int(input('a: '))+1):
+    r+=i
+print(r) 
+
+
+# Example 4: Python program to calculate the sum of 
+# all the odd numbers within the given range.
+
+r=0
+for i in range(1,int(input('a: '))+1):
+    if i%2 != 0:
+        r+=i 
+print(r) 
+
+#Example 5: Python program to print a multiplication table of a given number
+
+n=int(input('n: '))
+for i in range(1, 13):
+    print(i,' X ',n,'=',i*n)
+
+
+
+#Example 6: Python program to display numbers from a list using a for loop.
+
+n=[i for i in range(1, 4)]
+for i in n:
+    print(i)
+
+
+#Example 7: Python program to count the total number of digits in a number.
+
+n=123
+c=0
+for i in str(n):
+    c+=1
+print(c)
+
+
+#Example 8: Python program to check if the given string is a palindrome.
+
+n=input('str: ')
+c=''
+
+for i in n:
+    c = i + c
+
+if c==n: print('palindrome')
+else: print('not a palindrom')
+
+
+Example 9: Python program that accepts a word from the user and reverses it.
+
+
+n=input('str: ')
+c=''
+
+for i in n:
+    c = i + c
+
+print(c)    
+
+
+#Example 10: Python program to check if a given number is an Armstrong number
+
+n=input('str: ')
+power = len(n)
+no = 0
+
+for i in n:
+    no += int(i) ** power
+    
+if no == int(n): print(n,'is armstrong')
+else: print(n,'is not armstrong')    
+
+
+#Example 11: Python program to count the number of even and odd numbers from a series of numbers.
+
+e=0
+o=0
+
+for i in range(1,10):
+    if i%2 != 0:
+        o+=1
+    else:
+        e+=1
+        
+print(e,o)
+
+
+#Example 13: Python program to get the Fibonacci series between 0 to 50.
+
+n = int(input("Enter the number of terms in Fibonacci series: "))
+
+a, b = 0, 1
+for i in range(n):
+  print(a, end=" ")
+  a, b = b, a + b
+
+
+Example 14: Python program to find the factorial of a given number.
+
+n=int(input('n: '))
+for i in range(1,10):
+    if(n%i == 0):
+        print(i)      
+
+
+
