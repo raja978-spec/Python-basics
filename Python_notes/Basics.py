@@ -2253,39 +2253,215 @@ print(a.count()) # 3
 
 '''
 
+#                      SET
 '''
-1)Python program to interchange first and last elements in a list
-2)Python program to swap two elements in a list
-3)Python – Swap elements in String list
-4)Maximum of two numbers in Python
-5)Minimum of two numbers in Python
-6)Python Program to find sum and average of List in Python
-7)Python program to find smallest number in a list
-8)Python program to find largest number in a list
-9)Python program to find second largest number in a list
-10)Python program to print all even numbers in a range
-11)Python program to print all odd numbers in a range
-12)Python program to print all positive numbers in a range
-13)Python program to print all negative numbers in a range
-14)Python program to count positive and negative numbers in a list
-15)Python Program to print duplicates from a list of integers
+          UNORDERED AND DUPLICATE NOT ALLOWED
+
+when ever we tries to print the set element its
+order gets changed.
+
+a={1,4,5,'hi'}
+print(a)
+
+OUTPUT 1: {'hi', 1, 4, 5}
+OUTPUT 2: {1, 5, 'hi', 4}
+
+
+              INDEX CANNOT BE USED
+
+
+
+                 ADD
+
+adds element in random place, if all the elements in set
+are int then it will add the element in first place
+returns None
+
+a={2,4,3}
+a.add(100)
+print(a)
+
+a={2.0,4,3.3134}
+a.add(100)
+print(a)
+
+Combination of string and numeric data type the order of
+the add will be random
+
+
+a={2.0,4,3.3134,'CHAR'}
+a.add(100)
+print(a)
+
+OUTPUT1: {2.0, 3.3134, 100, 4, 'CHAR'}
+OUTPUT2: {'CHAR', 2.0, 3.3134, 100, 4}
+
+                 POP
+
+We can't give position on this pop, deletes random element when combination
+of data types given to the set like the add
+
+Returns the deleted element
+
+a={"helo",2,'hi',4,3}
+a.pop()
+print(a)
+
+OUTPUT1:
+{3, 4, 'helo', 'hi'}
+
+OUTPUT 2:
+{2, 3, 4, 'helo'}
+
+
+For only string data elements it pops random
+element
+
+st={"raja","ram","kumar","sakthi"}
+st.pop()
+print("pop",st)
+
+
+                UPDATE
+                
+Allows to add more than one elements into set
+returns none
+
+a={1,4,5,'hi'}
+print(a.update({1,2,3}))
+print(a)
+
+                  CLEAR
+             
+Clears all the element in existing set.
+It doesn't returns it.
+
+a={1,4,5,'hi','hi'}
+print(a.clear())
+print(a)
+
+                 SUB AND SUPER SET, DISJOINT
+
+Returns bool
+
+a={1,4,5}
+b={1,2,4,3,8,10,5}
+print(a.issubset(b)) Checks is a small set is
+                     subset of large set
+                     
+print(b.issuperset(a)) checks is a large set is
+                       subset of small set
+
+OUTPUT:
+True
+True
+
+For combination of data tpes it gets confused
+
+a={1,4,5,'ji'}
+b={1,2,4,3,8,10,5,'hi'}
+print(a.issubset(b))
+print(b.issuperset(a))
+
+OUTPUT:
+False
+False
+
+
+                   DISJOINT
+                   
+checks the second second it differ from current
+set, returns bool
+
+a={1,4,5,'ji'}
+b={2,3,8,10,'hi'}
+print(a.isdisjoint(b))
+
+OUTPUT: True
+
+                    UNION
+              
+returns grouped element
+
+ 
+                    DIFFERENCE UPDATE
+                    
+a=[545,335,5366,86745,2425]
+b=[545,335,43,42,1]
+c=[545,335,5366,86745,2425,5523,2351,6353]
+
+s1=set(a)
+s2=set(b)
+s3=set(c)
+
+#updates the give set with all the uncommon values
+#returns none
+
+s3.difference_update(s2,s1)
+
+print(s3)
+
+OUTPUT: 5523,2351,6353
+
+
+                INTERSECTION UPDATE
+                
+a=[545,335,5366,86745,2425]
+b=[545,335,43,42,1]
+c=[545,335,5366,86745,2425,5523,2351,6353]
+
+s1=set(a)
+s2=set(b)
+s3=set(c)
+
+# updates s1 with common values from all set
+# returns none
+s1.intersection_update(s2,s3)
+
+print('common element', s1)
+
+
+                                 SYMMETRIC DIFFERENCE
+                                 
+a=[545,335,5366,86745,2425]
+b=[545,335,43,42,1]
+c=[545,335,5366,86745,2425,5523,2351,6353]
+
+s1=set(a)
+s2=set(b)
+s3=set(c)
+
+# Removes common elements and remains
+# the uncommon elements from both set that are combined
+# into a single set and it returns that new set
+# it has update method too
+c=s1.symmetric_difference(s2)
+
+print('common element', c)
+
+Basic Set Programs
+
+1)Find the size of a Set in Python
+2)Iterate over a set in Python
+3)Python – Maximum and Minimum in a Set
+4)Python – Remove items from Set
+5)Python – Check if two lists have at-least one element common
+6)Python program to find common elements in three lists using sets
+7)Python – Find missing and additional values in two lists
+8)Python program to find the difference between two lists
+9)Python Set difference to find lost element from a duplicated array
+10)Python program to count number of vowels using sets in given string
+11)Concatenated string with uncommon characters in Python
+12)Python – Program to accept the strings which contains all vowels
+13)Python – Check if a given string is binary string or not
+14)Python set to check if string is anagram
+15)Python Set – Pairs of complete strings in two sets
 '''
 
-lst = [45,-42,-52,-42,35,20,-42,-35]
-for i in lst:
-    if lst.count(i) > 1:
-        print(i,"is duplicate element")
+str1={'hello','orlwd'}
+str2={'eolh', 'wohedolr'}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+for i in str1:
+    for j in str2:
+        if(set(i).issubset(j)):
+            print('pair of string', i,j)
