@@ -1981,6 +1981,12 @@ Code
 {'website': 'hackerrank', 'user': 'myname', 'extension': 'com'}
 '''
 
+#                   MEANS OF 1E+ 30
+'''
+while performing some divison operation we might got this
+type of number it means 1*(10)**30
+'''
+print(3 and None)
 
 #              OPERATORS
 '''
@@ -2048,6 +2054,22 @@ So the output will be false
               LOGICAL OPERATOR
               
               And, OR, NOT
+              
+a=1; b=3; c=3
+
+# if the left hand side value is non zero
+# than the right hand side value is printed
+# here
+print((a and b),(b and c), (c and a))
+
+# It works in opposite way of and
+print((a or b),(b or c), (c or a))
+
+Using all this alone then it works in opposite way of above one
+print(a and b) # 1
+
+
+
               
 ---------------Membership & Identity Operators--------------------
 
@@ -2421,7 +2443,7 @@ s1.intersection_update(s2,s3)
 print('common element', s1)
 
 
-                                 SYMMETRIC DIFFERENCE
+                SYMMETRIC DIFFERENCE
                                  
 a=[545,335,5366,86745,2425]
 b=[545,335,43,42,1]
@@ -2439,29 +2461,7 @@ c=s1.symmetric_difference(s2)
 
 print('common element', c)
 
-Basic Set Programs
-
-1)Find the size of a Set in Python
-2)Iterate over a set in Python
-3)Python – Maximum and Minimum in a Set
-4)Python – Remove items from Set
-5)Python – Check if two lists have at-least one element common
-6)Python program to find common elements in three lists using sets
-7)Python – Find missing and additional values in two lists
-8)Python program to find the difference between two lists
-9)Python Set difference to find lost element from a duplicated array
-10)Python program to count number of vowels using sets in given string
-11)Concatenated string with uncommon characters in Python
-12)Python – Program to accept the strings which contains all vowels
-13)Python – Check if a given string is binary string or not
-14)Python set to check if string is anagram
-15)Python Set – Pairs of complete strings in two sets
 '''
 
-str1={'hello','orlwd'}
-str2={'eolh', 'wohedolr'}
 
-for i in str1:
-    for j in str2:
-        if(set(i).issubset(j)):
-            print('pair of string', i,j)
+#
