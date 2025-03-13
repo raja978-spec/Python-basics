@@ -147,8 +147,21 @@ returns the dictionary of all keywords in python
       print('Welcome ')
     innerfunc()
 
- Outterfun()
+ Outterfun() # Without calling this function
+             # program doesn't know the values of x
+             # if we want to access a globally assigned 
+             # variables inside function the
+             # function should be called.
  print(x+ y+'Programmers')
+ 
+ The below example will give you error
+ 
+ 
+def func(a):
+    global x
+    x="hello"
+    print(a,x)
+print(x)
 '''
 
  #                NON-LOCAL KEYWORD
@@ -1986,7 +1999,6 @@ Code
 while performing some divison operation we might got this
 type of number it means 1*(10)**30
 '''
-print(3 and None)
 
 #              OPERATORS
 '''
@@ -2464,4 +2476,34 @@ print('common element', c)
 '''
 
 
-#
+#                   FUNCTIONS
+'''
+1. Keyword function
+2. default argument
+3. variable argument function with * and **
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
