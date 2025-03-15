@@ -255,6 +255,8 @@ print(x)
    frozenset has no module to support add and remove
    operations.
 
+ * we can do only set operations
+
  Set = {12,3,4,55,6}
  Frozen = frozzenset(Set)
  Frozen.add(22) # Raises error
@@ -2481,6 +2483,41 @@ print('common element', c)
 1. Keyword function
 2. default argument
 3. variable argument function with * and **
+'''
+
+#                    STRING
+'''
+                    REPLACE
+
+The below code replace only the word, beacue we
+sepecified 1
+
+str='hai helo hai'
+print(str.replace('hai','helo',1))
+
+OUTPUT:
+helo helo hai
+
+                    SPLIT
+
+Here 1 in max split
+
+str='hai helo hai'
+print(str.split(' ',1))
+
+OUTPUT:
+['hai', 'helo hai']
+'''
+
+#               TUPLE ASSIGNMENT
+'''
+We can pack more multiple varaibles with single tuple
+assignment, but the lenght of the value should be same
+on both left and right hand side.
+
+(a,b,c,d)='hai','helo','hai',1
+print(a)
+
 '''
 
 
