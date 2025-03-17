@@ -1636,6 +1636,10 @@ print(result.stdout)
               ['Berry', 2], ['Harsh', 1], 
               ['Akriti',6]]
  print(sorted(Name_Scoure,key=lambda x:x[1]))
+ 
+ # Sorting dict by values in des
+ max=sorted(dict.items(), key= lambda x: x[1], reverse=True)
+
 '''
 
 #                SWITCH CASE IN PYTHON
@@ -2484,53 +2488,190 @@ print('common element', c)
 2. default argument
 3. variable argument function with * and **
 '''
+#                    DICT
+'''
+Doesn't allows duplicate values. It is ordered
 
+keys()
+values()
+get()
+items()
+clear() - clears all items in orginal dict
+copy()
+pop()
+update() - Helps to add new items and update specific
+           item on original dict
+           
+           Return none
+
+dic={"Name":"sakthi","age":"23"}
+dic.update({"Name":'Akash', 'Age':'21', 'Course':'DS'})
+print("Dictionary",dic)
+
+OUTPUT:
+Dictionary {'Name': 'Akash', 'age': '23', 'Age': '21', 'Course': 'DS'}
+
+'''
+
+
+#                 TUPLE
+'''
+Immutable, allows duplicate
+
+slice() - built in function, does slicing
+EX:
+a=(1,3,4,4,2,4,2)
+b=slice(3)
+print(a[b])
+
+OUTPUT:
+(1,3,4)
+
+Count() - returns count a specific element
+Index() - returns first occurance index of specific element
+
+EX:
+a=(1,3,4,4,2,4,2)
+print(a.index(4))
+
+OUPUT:
+2
+
+len()
+max()
+min() 
+
+           ADD TUPLE ITEMS WITH +
+
+tpl1=("sam","ram","kumar")
+tpl2=("1","2","3")
+print(tpl1+tpl2)
+OUTPUT:
+('sam', 'ram', 'kumar', '1', '2', '3')
+
+'''
 #                    STRING
 '''
-                    REPLACE
 
+Immutable data type
+
+capitalize() - Captilize single starting char and returns it
+EX:
+str='hai helo hai'
+print(str.capitalize())
+OUTPUT:
+Hai helo hai
+
+lower()
+upper()
+
+center() - Aligns the text in center place with the give char
+EX:
+a='hello'
+b=a.center(11,'*')
+print(b)
+OUTPUT:
+***hello**
+
+count()
+index() - returns error if element is not found
+find() - Returns the index of first occurence, returns -1
+         if element is not found
+EX:
+a='hello'
+b=a.find('l')
+print(b)
+OUTPUT:
+2
+  
+replace() - 
 The below code replace only the word, beacue we
-sepecified 1
-
+specified 1
 str='hai helo hai'
 print(str.replace('hai','helo',1))
-
 OUTPUT:
 helo helo hai
 
-                    SPLIT
-
+split() - 
 Here 1 in max split
-
 str='hai helo hai'
 print(str.split(' ',1))
-
 OUTPUT:
 ['hai', 'helo hai']
+
+strip() - removes spaces from both left right
+lstrip() - removes spce from left
+rstrip() - from right
+
+title() - Converts capitalize in a paragraph
+a="
+this is the
+sample paragraph
+that explains how title
+function 
+in strings are 
+worked in
+python.
+"
+b=a.title()
+print(b)
+
+OUTPUT:
+This Is The
+Sample Paragraph
+That Explains How Title
+Function 
+In Strings Are 
+Worked In
+Python.
+
+
+All the above functions returns values, below return bool
+isalnum()
+isnumeric()
+isupper()
+islower()
+           
 '''
 
-#               TUPLE ASSIGNMENT
+#                  SLICING AND INDEXING
 '''
-We can pack more multiple varaibles with single tuple
-assignment, but the lenght of the value should be same
-on both left and right hand side.
+a=[10,20,30,40,50,60,70,80,90,100]
+#   0  1  2  3  4  5 -4 -3 -2 -1
+b=a[5:-2]
+print(b)
 
-(a,b,c,d)='hai','helo','hai',1
-print(a)
+OUTPUT:
+[60, 70, 80]
+---------------------------------------------
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5::-1] # starts from 5th index it prints
+           # element in reverser order
+print(b)
+
+OUTPUT:
+[60, 50, 40, 30, 20, 10]
+ 
+--------------------------------------------------
+
+a=[10,20,30,40,50,60,70,80,90,100]
+b=a[5::-2] # starts from 5th index it prints
+           # element in 2 by 2 reverser order
+print(b)
+
 
 '''
 
-
-
-
-
-
-
-
-
-
-
-
+#Python world - Not alpha num
+user_input= list("hi iam raja")
+dict={}
+for char in user_input:
+    dict[char] = user_input.count(char)
+num=len(user_input)//2
+some_char_index=list(dict.keys())[num]
+some_char_frequency=dict[some_char_index]
+print(some_char_index,'is occurred in ',some_char_frequency)
 
 
 

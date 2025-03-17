@@ -1,0 +1,184 @@
+1)Python program to check whether the string is Symmetrical or Palindrome
+#abcabc - symmetric
+str='madam'
+
+middel_index = len(str)//2
+first_half = str[middel_index:]
+second_half = str[:middel_index]
+
+if str == str[::-1]:
+    print(str,'is palindrome')
+else:
+    print(str,'is not a palindrome')
+
+if first_half == second_half:
+    print(str,' is symmetric')
+else:
+    print(str,'is not a symmetric')
+
+--------------------------------------------------------------------------------------------------
+2)Reverse words in a given String in Python
+str='helo world'
+print('Reversed word of ',str,' is', str[::-1])
+
+---------------------------------------------------------------------------------------------------------
+3)Ways to remove i’th character from string in Python
+
+def removeCharByReplace(str, char):
+    print(str.replace(char, ''))
+
+def removeCharBySlicing(str, char):
+    unwanted_char=str.find(char)
+    f=str[unwanted_char+1:]
+    s=str[:unwanted_char]
+    print(s+f)
+def removeCharByConvertingToList(str,char):
+    r=list(str)
+    r[r.index(char)]=''
+    print(''.join(r))
+while True:
+    str=input("Enter string: ")
+    char=input("Enter char to remove: ")
+    user_input = int(input('''
+    1. Remove char using replace
+    2. Remove char using slice
+    3. Remove char using by converting it to list
+
+    press any number to quit
+
+    '''))
+
+    if user_input==1:
+        removeCharByReplace(str,char)
+    elif user_input==2:
+        removeCharBySlicing(str,char)
+    elif user_input==3:
+        removeCharByConvertingToList(str,char)
+    else:
+        break
+
+-----------------------------------------------------------------------------------------------------------
+4)Find length of a string in python
+str='''
+The sample string of sam sample string
+is samjhn sjoo sajoi str
+'''
+print(len(str))
+
+----------------------------------------------------------------------------------------------------------
+5)Python – Avoid Spaces in string length
+str="      The sample string of sam sample string  "
+print('Without space remove',len(str))
+str_len = 0
+for i in str:
+    if i.isspace() == False:
+        str_len += 1
+
+print('With space removed', str_len)
+
+------------------------------------------------------------------------------------------------------------------
+6)Python program to print even length words in a string
+str="Sample String"
+print(str[::2])
+
+-----------------------------------------------------------------------------------------------------------------------
+7)Python – Uppercase Half String
+str="Sample String"
+middel_element_index = len(str)//2
+print(str[:middel_element_index].upper())
+
+-----------------------------------------------------------------------------------------------------------------------
+8)Python program to capitalize the first and last character of each word in a string
+---------------------------------------------------------------------------------------------------------------------------
+9)Python program to check if a string has at least one letter and one number
+#Python world - Not alpha num
+str="Python123"
+if str.isalnum():
+    print(str,"contains atleast one string and numeric")
+else:
+    print(str,'not contains atleast one string or numeric')
+
+--------------------------------------------------------------------------------------------------------------------------
+10)Python | Program to accept the strings which contains all vowels
+
+user_input= "Education"
+str=set(user_input)
+vowels = ['a','e','i','o','u']
+count_vowels_in_str = 0
+for char in str:
+    if char.lower() in vowels:
+        count_vowels_in_str+=1
+if(count_vowels_in_str == len(vowels)):
+    print(user_input,'is accepted')
+else:
+    print(user_input,'is not accepted because it contains only',count_vowels_in_str,' vowels')
+
+-----------------------------------------------------------------------------------------------------------------------------------
+11) Python | Count the Number of matching characters in a pair of string
+
+str1='Python world'.lower()
+str2='world '.lower()
+count=0
+for char in str1:
+    if char in str2:
+        count+=1
+print(count,'char is matched')
+
+---------------------------------------------------------------------------------------------------------------
+12)Python program to count number of vowels using sets in given string
+
+user_input= "Education"
+str=set(user_input)
+vowels = ['a','e','i','o','u']
+count_vowels_in_str = 0
+for char in str:
+    if char.lower() in vowels:
+        count_vowels_in_str+=1
+print('no of vowels in ', user_input,'is ',count_vowels_in_str)
+
+---------------------------------------------------------------------------------------------------------------------
+13)Python Program to remove all duplicates from a given string
+
+user_input= list("hello")
+for char in user_input:
+    if user_input.count(char) > 1:
+        user_input.remove(char)
+print(''.join(user_input))
+
+----------------------------------------------------------------------------------------------------------------------------
+14)Python – Least Frequent Character in String
+
+user_input= list("hi iam raja")
+for char in user_input:
+    if user_input.count(char) == 1:
+        print(char,'is least frequent char on ', ''.join(user_input))
+
+----------------------------------------------------------------------------------------------------------------------------------
+15)Python | Maximum frequency character in String
+
+user_input= list("hi iam raja")
+dict={}
+for char in user_input:
+    if user_input.count(char) > 1:
+      dict[char] = user_input.count(char)
+max=sorted(dict.items(), key= lambda x: x[1], reverse=True)
+print(max[0][0],'is occured in ', max[0][1])
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+16)Python – Odd Frequency Characters
+user_input= "hi iam raja"
+for i in range(len(user_input)):
+    if i%3==0:
+        print(user_input[i])
+-------------------------------------------------------------------------------------------------------------------------
+17)Python – Specific Characters Frequency in String List
+
+user_input= list("hi iam raja")
+dict={}
+for char in user_input:
+    dict[char] = user_input.count(char)
+num=len(user_input)//2
+some_char_index=list(dict.keys())[num]
+some_char_frequency=dict[some_char_index]
+print(some_char_index,'is occurred in ',some_char_frequency)
+
