@@ -1057,7 +1057,6 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
  Joined_string="and".join(List)
  print(Joined_string)
 '''
-
 #            DELETE FILES WITH OS
 '''
  import os
@@ -2660,28 +2659,9 @@ b=a[5::-2] # starts from 5th index it prints
            # element in 2 by 2 reverser order
 print(b)
 
-
 '''
-
-#Python world - Not alpha num
-user_input= list("hi iam raja")
-dict={}
-for char in user_input:
-    dict[char] = user_input.count(char)
-num=len(user_input)//2
-some_char_index=list(dict.keys())[num]
-some_char_frequency=dict[some_char_index]
-print(some_char_index,'is occurred in ',some_char_frequency)
-
-
-
-
-
-
-
-
-
-
-
-
-
+l=[1,2,3,4,5,6]
+n=2
+l[2:2]=l[0:2]
+l[0:2]=l[-(n):]
+print(l)

@@ -1,0 +1,142 @@
+1. Palindrome
+str='madam'
+if(str[::-1] == str):
+    print(str,'is palindrome')
+else:
+    print(str,'not a palindrome')
+
+--------------------------------------------------------------------------
+2. Max product of two int in list
+
+l=[1,10,2,6,5]
+m=[]
+for i in range(len(l)):
+    for j in range(i+1, len(l)):
+        m.append(l[i]*l[j])
+print(max(m))
+
+--------------------------------------------------------------------------
+3. First non repeating char
+
+str='swiss'
+for char in str:
+    if str.count(char)==1:
+        print(char, 'is the first non repeating char')
+        break
+
+-----------------------------------------------------------------------------
+
+4. Merge two sorted list
+
+l1=[1,3,5]
+l2=[2,4,6]
+l1.extend(l2)
+l1.sort()
+print(l1)
+
+---------------------------------------------------------------------------------
+
+5. Swap two no without third variable
+
+a,b=10,20
+a,b=b,a
+print(a,b)
+
+----------------------------------------------------------------------------
+
+6. prime
+
+no=int(input())
+for i in range(2,no):
+    if no%i == 0:
+        print(no,'is not prime')
+        break
+    else:
+        print(no,'is prime')
+        break
+---------------------------------------------------------------------------------
+
+7. Find the element not in list
+
+I=[1,2,4,5]
+for i in list(range(1,len(I))):
+    if i not in I:
+        print(i,'is not in list')
+        break
+---------------------------------------------------------------------------------
+
+8. anagram
+
+str1="listen"
+str2='silent'
+
+s1=set(str1)
+s2=set(str2)
+c=s1.symmetric_difference(s2)
+print(c)
+
+if(len(c)==0):
+    print(str1,'and', str2,'is a anagram')
+else:
+
+-------------------------------------------------------------------------------
+9. Interchange first and last element in list
+
+l=[2,4,52,4,3,1]
+last=l[len(l)-1]
+first = l[0]
+l[0]=last
+l[len(l)-1]=first
+print(l)
+
+-------------------------------------------------------------------------------
+
+10. Factorial with Recursion function 
+
+def fact(no):
+    if no==0:
+        return 1
+    else:
+        return no*fact(no-1)
+print(fact(5))
+
+-------------------------------------------------------------------------------
+
+11. Longest substring
+
+----------------------------------------------------------------------------
+
+12. Reverse Number
+
+n=1234
+r=''
+for i in str(n):
+    r=i+r
+print(int(r))
+
+------------------------------------------------------------------------
+
+13. Split Odd and even 
+
+l=[1,2,3,4,5,6]
+e=[]
+o=[]
+for i in l:
+    if(i% 2== 0):
+        e.append(i)
+    else:
+        o.append(i)
+print(e,o)
+
+-----------------------------------------------------
+
+14. Pattern
+
+for i in range(1,6):
+    print('*'*i)
+for j in range(6,1,-1):
+    print('*'*j)
+
+-----------------------------------------------------------
+
+15. Right rotate list
