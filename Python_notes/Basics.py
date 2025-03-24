@@ -1356,7 +1356,7 @@ print(result.stdout)
        
  SYMBOLS:
 
- 1. ^ - startswith
+ 1. ^ - startswith or not
    
    EX: import re
         text="rajakavintha@gmail.com" 
@@ -1502,10 +1502,28 @@ print(result.stdout)
                           txt = "The rain in Spain"
                           x = re.sub("\s", "9", txt)
                           print(x)
+
+
+  5. compile - compile a regex pattern to use it with string for pattern
+               finder. allows to reuse same regux for all type of
+               strings
+
+
+EX:
+
+import re
+str='iam raja 24 following is the number 0843 my paretns age is 56'
+number_pattern = re.compile('\d+')
+print(number_pattern.findall(str))
+
+              
+  Use this site to validate regx https://regex101.com/
 '''
 
-
-
+import re
+str='iam raja 24 following is the number 0843 my paretns age is 56'
+number_pattern = re.compile('\d+')
+print(number_pattern.findall(str))
 
 
 #           FIX RANGE WITHOUT RANGE
