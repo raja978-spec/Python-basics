@@ -966,7 +966,7 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
  ITERATOR:
 
  Before going to know about generator we have to 
- know iterabes, iterrator, iteration.
+ know iterables, iterrator, iteration.
 
  1. Iterables -* variable's each elements are called 
                  Iterables or Iterators.
@@ -1010,6 +1010,9 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
 
  GENERATOR:
 
+  * It is function that helps to return iterator a values instead
+    of single value
+
   * Let's assume we open a media player and play a 
     music suddenly we pause it and again we play it.
   * It starts where it is end. 
@@ -1048,7 +1051,71 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
                  # call next iterator it return 
                  # where it is left.
  print(next(var))
+
+
+ EXAMPLE 2:
+
+ Normal function
+
+ def sequence(Range):
+    l=[i for i in range(Range)]
+    return l
+
+l= sequence(100) # it returns iterator through list
+
+
+But below generator it returns those collection with
+yield
+
+def sequence(Range):
+    for i in range(Range): yield i
+l= sequence(100) # <generator object sequence at 0x00000295E51B4120>
+print(next(l))# 0
+print(next(l))# 1 
+print(next(l))# 2
+
+
+EXAMPLE 3:
+
+def fibonic(Range):
+    a,b=0,1
+
+    for _ in range(Range):
+        yield a
+        a,b = b, a+b 
+
+range=5
+res = fibonic()
+
+for i in range(range):
+    print(next(res))
+
+
+                      DIFFERENCE BETWEEN NORMAL COLLECTION
+                          AND ITER COLLECTION, GENERATOR
+
+Iter, generator collection's size will be less than the normal collection size
+
+
+import sys
+l=[i for i in range(100000000000000000)] # normal object collection
+iter_l= l.__iter__() # iter collection
+print('normal collection size', sys.getsizeof(l))
+print('iter collection size ', sys.getsizeof(iter_l))
+
+
+                          SUMMARY
+
+Iterator: An object that implements __iter__() and __next__(), allowing iteration using next(), but it stores all values in memory.
+
+Generator: A special type of iterator created using yield, which generates values on the fly (lazy evaluation) and doesn't store the entire sequence in memory.
+
+Key Difference: Generators are memory-efficient and pause execution after yielding a value, whereas iterators load everything at once and continue until exhausted.
+
+
+
 '''
+
 
 #            METHOD OVERLOADING
 
