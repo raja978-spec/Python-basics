@@ -1,0 +1,81 @@
+1. Frequency of element
+
+Approach 1:
+
+arr=[1,2,3,5,5,6,32,4,2,4,424,21]
+for element in set(arr):
+    print(element, arr.count(element))
+
+Approach 2:(Need correction)
+
+str=[2,5,5656,4554,5,4]
+count=0
+for i in range(len(str)):
+    for j in range(i+1,len(str)):
+        if(str[i]==str[j]):
+            count+=1
+            print(str[i],count)
+
+------------------------------------------------------------------------------------
+
+2. Right rotate list
+
+l=[1,2,3,4,5,6]
+n=2
+rotated_array=[]
+elements_to_rotate = l[-(n):]
+elements_of_left_side=l[:-(n)]
+rotated_array.extend(elements_to_rotate)
+rotated_array.extend(elements_of_left_side)
+print(rotated_array)
+
+---------------------------------------------------------------------------------------
+
+3. Interchange diagonals
+
+a=[[1,2,3],[4,5,6],[7,8,9]]
+n=[] 
+s=0     
+for i in range(len(a)):
+    if(i%2==0):
+       a[i][len(a[i]-1)],a[len(a)-1] = a[len(a)-1],a[i][j] 
+         
+         
+print(s)
+---------------------------------------------------------------------------------------------
+
+4. Reverse string
+
+str='sample string'
+result=''
+for i in str:
+    result = i+result
+print(result)
+
+-------------------------------------------------------------------------------
+
+5. Remove repeating char
+
+str=list('sample string entered')
+result=''
+for i in range(len(str)):
+    for j in range(i+1,len(str)):
+        if(str[i]==str[j]):
+            str[i]=''
+print(''.join(str))
+
+---------------------------------------------------------------------------------
+
+6. anagram
+
+str1="listen"
+str2='silent'
+
+s1=set(str1)
+s2=set(str2)
+c=s1.symmetric_difference(s2)
+print(c)
+
+if(len(c)==0):
+    print(str1,'and', str2,'is a anagram')
+else:

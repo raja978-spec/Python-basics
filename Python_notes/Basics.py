@@ -248,6 +248,21 @@ print(x)
 
  [(x + y) for (x,y) in zip(a,b)]  # parallel iterators
  # output => [8, 10, 12]
+
+'''
+
+#                  ZIP
+'''
+ Combines all values in more than one iterables into single tuple.
+ Returns tuples of list
+
+ a=[1,2,4,5]
+ b=['g','r','r','r']
+ c=['grgr','eger','geg','eg']
+ print(list(zip(a,b,c)))
+
+ OUTPUT:
+ [(1, 'g', 'grgr'), (2, 'r', 'eger'), (4, 'r', 'geg'), (5, 'r', 'eg')]
 '''
 #                 FROOZEN SET 
 '''
@@ -2005,6 +2020,92 @@ while performing some divison operation we might got this
 type of number it means 1*(10)**30
 '''
 
+#            ORD function
+'''
+The ord() function in Python is used to get the Unicode code point 
+(integer representation) of a given character.
+
+print(ord('A')) # 65
+'''
+
+#                        ID
+'''
+
+It is a built in function helps to see the location
+of data stored in RAM.
+
+l=[1,2,4]
+print(id(l))
+
+OUTPUT:
+3034612904192
+
+l=[1,2,4]
+l*=2 # doesn't channge id, just appends the value to id
+print(id(l),l)
+
+OUTPUT:
+2099954725120 [1, 2, 4, 1, 2, 4]
+'''
+
+#                     COLLECTION PACKAGE
+'''
+It is helps to handle key not found error in a dict
+
+import collections as ct
+default_dic = ct.defaultdict(lambda: 'Key not available')
+print(default_dic['a'])
+
+OUTPUT:
+Key not available
+'''
+
+#                          MAP
+'''
+Helps to iterator over a sequence and do some operations and returns it
+
+l=[1,2,3,4,5]
+# map(function, iterable)
+m=list(map(lambda x:x**2, l))
+print(m)
+
+'''
+
+#                     FILTER
+'''
+filter a sequence by specifying conditions, by default it return
+iterable, so it needs to be converted to list.
+
+l=[1,2,3,4,5]
+# filter(function, iterable)
+m=list(filter(lambda x:x%2==0, l))
+print(m)
+
+OUTPUT:
+[2.4]
+
+'''
+
+#                     REDUCE
+'''
+Helps to reduce collection of values to single value
+
+from functools import reduce
+l=[1,2,3,4,5]
+
+# reduce(function, iterable)
+# in x it has previous value
+# in y it has next value
+# 1st - x= 1*1 = 1, y= 2
+# 2nd - x= 2*3 = 6, y = 4
+# 3rd - x= 6*4 = 24, y=5
+# 4th - x= 24*5 = 120
+
+m=reduce(lambda x,y:x*y, l)
+print(m)
+
+OUTPUT: 120
+'''
 #              OPERATORS
 '''
  ------------------Operators Types:-------------------
@@ -2660,8 +2761,4 @@ b=a[5::-2] # starts from 5th index it prints
 print(b)
 
 '''
-l=[1,2,3,4,5,6]
-n=2
-l[2:2]=l[0:2]
-l[0:2]=l[-(n):]
-print(l)
+

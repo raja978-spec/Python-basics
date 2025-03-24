@@ -140,3 +140,12 @@ for j in range(6,1,-1):
 -----------------------------------------------------------
 
 15. Right rotate list
+
+l=[1,2,3,4,5,6]
+n=2
+rotated_array=[]
+elements_to_rotate = l[-(n):]
+elements_of_left_side=l[:-(n)]
+rotated_array.extend(elements_to_rotate)
+rotated_array.extend(elements_of_left_side)
+print(rotated_array)
