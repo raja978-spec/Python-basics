@@ -554,9 +554,25 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
  python where looking for packages and module.
 '''
 
+#                WITH KEYWORD
+'''
+Why Use with?
+✅ No need to explicitly close resources
+✅ Prevents memory leaks
+✅ Simplifies code and avoids errors
+'''
+
 #             FILE OPERATIONS
 '''
- Open and read a file
+
+ open() is the function helps to open a file, this can have
+ two arguments. filename, mode
+
+ It has many mode of file, by default it takes r
+
+ In python all the code files are stored in utf-8 format by default and for
+ text file operations it uses utf-8 format, utf-8 is the universal acceptable
+ format for text encode
 
  File=open('Python\Python-basics\TimeStamps.txt','r')
  #text=File.read()
@@ -570,10 +586,11 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
 
  1. r - read
  2. w - write
- 3. a - append
+ 3. a - append, creates a file it doesn't exist.
  4. + - Opening files for update
  5. rb - reads binary format
  6. rt - reads text format
+ 7. x - creates new file
 
  # Write files
 
@@ -587,7 +604,17 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
  with open('Python/Python-basics/TimeStamps.txt') as f:
   text=f.read() # It automatically close the file once it is read
   print(text)
+
+METHODS:
+
+1. read - reads whole content of a file and returns it, takes
+          one argument, no of character going to read
+
+2. readline - reads one line at a time and returns it
+3. readlines - reads all lines ate stores those readed lines
+              on list returns those list
 '''
+    
 #            *arg and **kwargs
 '''
  def Arg(a,b,*arg):
@@ -751,6 +778,51 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
   * By inheriting you can access all parent's class attribute,functions etc
   * In Multiple inheritance you can inherit multiple number of classes.
   * All this inheritance is may be used for polymorphism.
+'''
+
+#                           MULTI THREADING
+'''
+time is the module helps to do this, it helps to hold some function for
+specific time and that time another function will be executed.
+
+And threading is the module which helps to execute more than one functions
+at a time(while a function waiting for some time)
+
+Context switching will be done with this module.
+
+EX:
+
+import time
+import threading
+
+def square(arr):
+    for i in arr:
+        time.sleep(0.3)  # Simulates delay for each square calculation
+        print('square after 0.3 sec ', i**2)
+
+def cube(arr):
+    for i in arr:
+        time.sleep(0.1)  # Simulates delay for each cube calculation
+        print('cube executed, square on hold ', i**3)
+
+l = [1, 2, 3, 4, 5]
+t = time.time()  # Record the start time
+
+# Creating two threads for parallel execution
+threadA = threading.Thread(target=square, args=[l,])
+threadB = threading.Thread(target=cube, args=[l,])
+
+print('started in ', time.time() - t, ' seconds')
+
+threadA.start()  # Starts execution of square function in a separate thread
+threadB.start()  # Starts execution of cube function in a separate thread
+
+threadA.join()  # Waits for threadA to complete before proceeding
+threadB.join()  # Waits for threadB to complete before proceeding
+
+print('ended in ', time.time() - t, ' seconds')  # Prints total execution time
+
+
 '''
 
 #                 SUPER KEYWORD
@@ -1959,6 +2031,9 @@ OUTPUT:
 The value at index 2 is c.
 Error: Index out of range.
 '''
+
+#               LIST OF BUILT IN EXCEPTIONS
+#print(dir(locals()['__builtins__']))
 
 #              SWAPCASE IN STR FUNCTION
 '''

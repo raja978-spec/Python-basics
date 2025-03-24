@@ -49,6 +49,11 @@
    text='A'.encode('ASCII')
    print(text.hex())
 
+python 2.x used ASCII as the default encoding.
+
+Python 3.x uses UTF-8 as the default encoding for source files and text file operations.
+
+You can explicitly specify the encoding when opening a file:
 
 '''
 
