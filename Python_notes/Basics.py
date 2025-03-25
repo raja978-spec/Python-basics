@@ -1356,12 +1356,14 @@ print(result.stdout)
        
  SYMBOLS:
 
- 1. ^ - startswith or not
+ 1. ^ - not having chat followed by this
    
-   EX: import re
-        text="rajakavintha@gmail.com" 
-        Searcher=re.search("^r",text)
-        print(Searcher.string)
+   EX: 
+
+import re
+str="Hello@123! How's it going?"
+pattern=re.compile(r'[^A-Za-z0-9]')
+print(' '.join(pattern.findall(str)))
 
 
  2. $ - endswith
@@ -1519,12 +1521,6 @@ print(number_pattern.findall(str))
               
   Use this site to validate regx https://regex101.com/
 '''
-
-import re
-str='iam raja 24 following is the number 0843 my paretns age is 56'
-number_pattern = re.compile('\d+')
-print(number_pattern.findall(str))
-
 
 #           FIX RANGE WITHOUT RANGE
 '''
@@ -2921,4 +2917,3 @@ b=a[5::-2] # starts from 5th index it prints
 print(b)
 
 '''
-

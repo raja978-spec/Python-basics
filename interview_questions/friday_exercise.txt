@@ -1,0 +1,218 @@
+1. Frequency of element
+
+Approach 1:
+
+str=[2,5,5656,4554,5,4]
+counts={}
+
+for i in str:
+    if i not in counts:
+        counts[i] = 1
+    else:
+        counts[i] += 1
+result = sorted(counts.items(), key=lambda x:x[1], reverse=True)
+print(result[0])
+
+------------------------------------------------------------------------------------
+
+2. Right rotate list
+
+l=[1,2,3,4,5,6]
+n=2
+rotated_array=[]
+elements_to_rotate = l[-(n):]
+elements_of_left_side=l[:-(n)]
+rotated_array.extend(elements_to_rotate)
+rotated_array.extend(elements_of_left_side)
+print(rotated_array)
+
+---------------------------------------------------------------------------------------
+
+3. Interchange diagonals
+
+a=[[1,2,3],[4,5,6],[7,8,9]]
+n=[] 
+s=0     
+for i in range(len(a)):
+    if(i%2==0):
+       a[i][len(a[i]-1)],a[len(a)-1] = a[len(a)-1],a[i][j] 
+         
+         
+print(s)
+---------------------------------------------------------------------------------------------
+
+4. Reverse string
+
+str='sample string'
+result=''
+for i in str:
+    result = i+result
+print(result)
+
+-------------------------------------------------------------------------------
+
+5. Remove repeating char
+
+str=list('sample string entered')
+result=''
+for i in range(len(str)):
+    for j in range(i+1,len(str)):
+        if(str[i]==str[j]):
+            str[i]=''
+print(''.join(str))
+
+---------------------------------------------------------------------------------
+
+6. anagram
+
+str1="listen"
+str2='silent'
+
+s1=set(str1)
+s2=set(str2)
+c=s1.symmetric_difference(s2)
+print(c)
+
+if(len(c)==0):
+    print(str1,'and', str2,'is a anagram')
+else:
+    print(str1,' and ',str2,' is not a anagram')
+
+---------------------------------------------------------------------------------------------
+
+7. Triangle is equilateral, scalene, isosceles
+
+a=int(input('a: '))
+b=int(input('b: '))
+c=int(input('c: '))
+
+if(a==b==c):
+    print('Equailateral')
+elif(a+c) > b:
+    print('Scalence')
+elif (a==b) or (b==c) or (c==a):
+    print('Isosceles')
+
+-----------------------------------------------------------------------------------------------------
+
+8. Sort list of string in alphabetic order and reverse the alphabetic
+   order list of string 
+
+lst=['welcome','to','the','world', 'of','python'] # o,p,t,w
+
+for index in range(0, len(lst)):
+    for index2 in range(index+1, len(lst)):
+        if lst[index] > lst[index2]:
+            lst[index], lst[index2] = lst[index2], lst[index]
+print(lst)
+index=0
+result=[]
+for i in range(len(lst), 0,-1):
+    result.append(lst[i-1])
+print(result)
+
+-----------------------------------------------------------------------------------------------------------
+
+9. Half diamond pattern
+
+rows = int(input('no of rows: '))
+
+for i in range(0, rows):
+    print('*'*i)
+for i in range(rows,0,-1):
+    print('*'*i)
+
+------------------------------------------------------------------------------------------------------------
+
+10. Check even and odd no with bitwise operator
+
+no=int(input('no: '))
+res= no & 1 # gives one if both side is 1
+if(res):
+    print(no,' is odd') # odd no have 1 in it's binary
+else:
+    print(no,' is even') # even no have 0
+
+---------------------------------------------------------------------------------------------------------------------
+
+11. Traingular pattern
+
+rows = 5
+for i in range(1, rows+1):
+    print(" " * (rows-i) +"*" * (2 * i - 1))
+
+
+
+Explanation:
+
+Understanding n - i (Leading Spaces)
+The pyramid shape is centered, so we need spaces before printing * on each line.
+
+n is the total number of rows (height of the pyramid).
+
+i is the current row number (starting from 1).
+
+The number of spaces decreases as we go down.
+
+Example for n = 5:
+
+Row 1 → n - 1 = 4 spaces
+
+Row 2 → n - 2 = 3 spaces
+
+Row 3 → n - 3 = 2 spaces
+
+Row 4 → n - 4 = 1 space
+
+Row 5 → n - 5 = 0 spaces
+
+Understanding 2 * i - 1 (Number of * in Each Row)
+The number of stars increases in an odd-numbered sequence: 1, 3, 5, 7, 9...
+
+This follows the formula 2 * i - 1, where:
+
+Row 1 → 2 * 1 - 1 = 1 (*)
+
+Row 2 → 2 * 2 - 1 = 3 (***)
+
+Row 3 → 2 * 3 - 1 = 5 (*****)
+
+Row 4 → 2 * 4 - 1 = 7 (*******)
+
+Row 5 → 2 * 5 - 1 = 9 (*********)
+
+---------------------------------------------------------------------------------------------------------------------------------
+12. Count occurrences of character - Solution is similar to 1st question
+--------------------------------------------------------------------------------------------------------------
+13. HCF
+
+num1=12
+num2=18
+
+def find_factors(num):
+    factors = []
+    for i in range(1, num+1):
+        if num %i == 0:
+            factors.append(i)
+    return factors
+
+def find_common_factor(*args):
+     common_factors = []
+     print(args[0], args[1])
+     for value in args[0]:
+          if value in args[1]:
+                common_factors.append(value)
+     return common_factors
+                 
+def find_highest_common_factor(factors):
+     max=factors[0]
+     for i in range(len(factors)):
+          if factors[i] > max:
+               max = factors[i]
+     return max    
+        
+
+num1_factors = find_factors(num1)
+num2_factors = find_factors(num2)
+common_factors = find_common_factor(num1_factors, num2_factors)    
+print(find_highest_common_factor(common_factors))  

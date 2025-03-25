@@ -104,6 +104,33 @@ print(fact(5))
 
 11. Longest substring
 
+Dynamic programming are used here
+
+Dynamic Programming (DP) is an optimization technique used 
+to break a problem into smaller subproblems, store their results, 
+and reuse them to avoid redundant computations.
+
+str1 = "abcdef"
+str2 = "zabcf"
+m, n = len(str1), len(str2)
+dp = [[0] * (n + 1) for _ in range(m + 1)]
+print(dp)
+max_length = 0
+max_indices = (0, 0)
+for i in range(1, m + 1):
+    for j in range(1, n + 1):
+        if str1[i - 1] == str2[j - 1]:
+            dp[i][j] = dp[i - 1][j - 1] + 1 # Increases the count with previous 
+                                            # letter count, helps to increase
+                                            # the length of the sub string
+            print(f'df[[{i}][{j}]] = {dp[i][j]}, max length = {max_indices}')
+            if dp[i][j] > max_length:
+                max_length = dp[i][j]
+                max_indices = (i, j)
+        else:
+            dp[i][j] = 0
+print(str1[max_indices[0] - max_length:max_indices[0]])
+
 ----------------------------------------------------------------------------
 
 12. Reverse Number
