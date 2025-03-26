@@ -46,14 +46,22 @@ print(a,b)
 
 6. prime
 
-no=int(input())
-for i in range(2,no):
-    if no%i == 0:
-        print(no,'is not prime')
-        break
+no=37
+
+def is_prime():
+    if no<1:
+        return False
+    elif no>=1:
+        for i in range(2, int(no**0.5) + 1):
+            if no % i == 0:
+                return False
     else:
-        print(no,'is prime')
-        break
+        return True
+
+if is_prime():
+    print(no,'is prime')
+else:
+    print(no,'is not prime')    
 ---------------------------------------------------------------------------------
 
 7. Find the element not in list

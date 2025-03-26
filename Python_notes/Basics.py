@@ -2917,3 +2917,15 @@ b=a[5::-2] # starts from 5th index it prints
 print(b)
 
 '''
+arr=[4,3,4,23,1,1]
+
+def binary_search(arr):
+    start, end = 0, len(arr)
+
+    while start<=end:
+        middle = start+end//2
+
+        if arr[start] < arr[middle]:
+            start+= 1
+        elif arr[end] > arr[middle]:
+            end+=1
