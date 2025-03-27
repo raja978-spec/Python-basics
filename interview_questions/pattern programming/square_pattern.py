@@ -161,8 +161,93 @@ for i in range(1, n+1):
     print()
 
 '''
+
+#          10
+'''
+
+1  1  2  1  3  1 - 9
+1  2  2  2  3  2 - 12
+1  3  2  3  3  3 - 15
+1  4  2  4  3  4 - 18
+1  5  2  5  3  5 - 21
+
+
+Even place we have 111,222,333
+Odd place we have 123,123,123
+
+APPROACH 1:
+
 n=int(input('n: '))
-for i in range(1, n+1):
-    for j in range(1, n+1):
-        print(j*i, end=' ')
+for i in range(1,n+1):
+    print(1, 0+i, 2, 0+i, 3, 0+i)
+    # print(1, 0+1, 2, 0+1, 3, 0+1)
+    # print(1, 0+2, 2, 0+2, 3, 0+2)
+    # print(1, 0+3, 2, 0+3, 3, 0+3)
+
+APPROACH 2:
+
+n=int(input('n: '))
+for i in range(1,n+1):
+    for j in range(1, (n//2)+2):
+        print('{} {}'.format(j, i), end=' ')
     print()
+'''
+
+#             11 (Opposite version of 10)
+
+'''
+
+n: 5
+1 1 1 2 1 3
+2 1 2 2 2 3
+3 1 3 2 3 3
+4 1 4 2 4 3
+5 1 5 2 5 3
+
+
+n=int(input('n: '))
+for i in range(1,n+1):
+    for j in range(1, (n//2)+2):
+        print('{} {}'.format(i, j), end=' ')
+    print()
+'''
+
+#              12
+'''
+
+n: 5
+1 6 11 16 21
+2 7 12 17 22
+3 8 13 18 23
+4 9 14 19 24
+5 10 15 20 25
+
+n=int(input('n: '))
+for i in range(1,n+1):
+    for j in range(n):
+        print(n*j+i, end=' ')
+        # print(5*0+1, 5*1+1, 5*2+1)
+        # print(5*0+2, 5*1+2, 5*2+2)
+        # print(5*0+3, 5*1+3, 5*2+3) 
+    print()
+
+'''
+
+#               13
+'''
+
+1 10 11 20 21
+2 9  12 19 22
+3 8  13 18 23
+4 7  14 17 24 
+5 6  15 16 25
+
+'''
+n=int(input('n: '))
+for i in range(1,n+1):
+    for j in range(n):
+        print(n*j+i, end=' ')
+        print(1,5*2, 5*2+1, 5*2+5*2, 5*2+5*2+1)
+        print() 
+    print()
+   
