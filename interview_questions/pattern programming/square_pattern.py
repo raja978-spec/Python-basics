@@ -242,12 +242,97 @@ for i in range(1,n+1):
 4 7  14 17 24 
 5 6  15 16 25
 
-'''
 n=int(input('n: '))
-for i in range(1,n+1):
-    for j in range(n):
-        print(n*j+i, end=' ')
-        print(1,5*2, 5*2+1, 5*2+5*2, 5*2+5*2+1)
-        print() 
+
+for x in range(1, n+1):
+    r1 = x
+    r2 = n-x+1
+    for y in range(1, n+1):
+        print('y = ', y, 'x = ',x)
+        if(y%2 == 1):
+            print('{}'.format(r1), end=' ')
+        else:
+            print('{}'.format(r2), end=' ')
+        r1 = r1+n
+        r2 = r2+n
     print()
-   
+
+'''
+#               14
+'''
+
+3 6 9
+2 5 8
+1 4 7
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(1, n+1):
+        print(n*j-i, end=' ')
+        # print(3*1-0, 3*2-0, 3*3-0)
+        # print(3*1-1, 3*2-1, 3*3-1)
+        # print(3*1-2, 3*2-2, 3*3-2)
+    print()
+'''
+
+#             15
+'''
+
+3 4 9 
+2 5 8
+1 6 7
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(1, n+1):
+        if(j%2 == 0):
+            print(n+i+1, end=' ')
+        else:
+            print(n*j-i, end=' ')
+        # print(3*1-0, 3+0+1, 3*3-0)
+        # print(3*1-1, 3+1+1, 3*3-1)
+        # print(3*1-2, 3+1+2, 3*3-2)
+    print()
+'''
+
+#            16
+
+'''
+
+1 2 3
+2 3 4
+3 4 5
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(1, n+1):
+        print(j+i, end=' ')
+        # print(1+0, 2+0, 3+0)
+        # print(1+1, 2+1, 3+1)
+    print()
+'''
+
+#      print odd of 16 pattern
+'''
+1 3 5
+3 5 7
+5 7 9
+
+n=int(input('n: '))
+start = 1
+end = n+n
+
+for i in range(1, n+1):
+    # print(start=1, end=6)
+    # print(start=3, end=8)
+    # print(start=5, end=10)
+    for j in range(start, end+1):
+        if j%2 != 0:
+            print(j, end=' ')
+            pass
+    start = end-n
+    end= end+n-1
+    print()
+
+
+'''
