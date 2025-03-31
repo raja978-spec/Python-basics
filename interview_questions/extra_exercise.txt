@@ -46,6 +46,27 @@ print(a,b)
 
 6. prime
 
+# A prime number should has only one factor and
+# it is divisble by it self
+# Ex: 5 is factor 1 and it is divisble by itself
+# Ex: 6 has factors 1,2,3 so it is not prime
+
+APPROACH 1:
+
+no=int(input('no: '))
+count = 0
+    
+for i in range(1, no+1):
+    if no%i == 0:
+       count += 1
+if count == 2:
+  print(no,' is a prime number')
+else:
+  print(no,'is not prime number')
+
+
+APPROACH 2:
+
 no=37
 
 def is_prime():

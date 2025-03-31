@@ -1,0 +1,255 @@
+-----------------------Modules------------------------
+
+1]A file containing a set of functions you want to include in your application.
+2]Consider a module to be the same as a code library.
+
+E.g 1--------------------------------------------
+
+<1--code file name is xxxxxxx>
+
+def module(name):
+  print("Hello, " + name)
+
+<2--import xxxxxx (file name)>
+
+import xxxxxxx
+xxxxxx.module("Jonathan")
+
+E.g 2]-------------------------------------------
+
+<1--code file name is xxxxxxx>
+
+person1 = {
+  "name": "John",
+  "age": 36,
+  "country": "Norway"}
+
+<2--import xxxxxx file name>
+
+import mymodule
+
+a = mymodule.person1["age"]
+print(a)
+
+
+-------------------------------functions--------------------------------------
+
+
+def add(a,b):
+    return a+b
+
+def sub(a,b):
+    return a-b
+
+def mul(a,b):
+    return a*b
+
+def div(a,b):
+    return a/b
+
+-----------------------------------------------------------------------------
+
+
+import Modules as abc
+import Modules
+a=20
+b=5
+c=abc.add(a,b)
+print(c)
+
+a=int(input("Enter the number  A:"))
+b=int(input("Enter the number  B:"))
+c=abc.sub(a,b)
+print(c)
+
+a=int(input("Enter the number  A:"))
+b=int(input("Enter the number  B:"))
+c=Modules.mul(a,b)
+print(c)
+
+a=int(input("Enter the number  A:"))
+b=int(input("Enter the number  B:"))
+c=Modules.div(a,b)
+print(c)
+-------------------------------------
+
+from Modules import div,add,sub
+
+a=10
+b=5
+c=div(a,b)
+print(c)
+
+a=50
+b=25
+d=add(a,b)
+print(d)
+
+
+a=int(input("enter a "))
+b=int(input("enter b "))
+f=sub(a,b)
+print(f)
+
+----------------------------------
+from Modules import *
+a=20
+b=25
+c=add(a,b)
+print(c)
+
+a=5
+b=10
+d=sub(a,b)
+print(d)
+
+a=8
+b=10
+d=mul(a,b)
+print(d)
+
+a=7
+b=10
+d=div(a,b)
+print(d)
+
+ 
+----------------------------------------------
+
+import calendar
+m=int(input("Enter the month number:"))
+print(f"Month #{m} is : {calendar.month_name[m]}")
+
+---------------------Datetime--------------------------
+Directive	Description				Example	
+%a		Weekday, short version			Wed	
+%A		Weekday, full version			Wednesday	
+%w		Weekday as a number 0-6, 0 is Sunday	3	
+%d		Day of month 01-31			31	
+%b		Month name, short version		Dec	
+%B		Month name, full version		December	
+%m		Month as a n umber 			01-12	12	
+%y		Year, short version, without century	18	
+%Y		Year, full version			2018	
+%H		Hour 00-23				17	
+%I		Hour 00-12				05	
+%p		AM/PM					PM	
+%M		Minute 00-59				41	
+%S		Second 00-59				08	
+%f		Microsecond 000000-999999		548513	
+%z		UTC offset				+0100	
+%Z		Timezone				CST	
+%j		Day number of year 001-366		365	
+%U		Week number of year, Sunday as the first day of week, 	00-53	52	
+%W		Week number of year, Monday as the first day of week, 	00-53	52	
+%c		Local version of date and time				Mon Dec 31 17:41:00 2018	
+%C		Century							20	
+%x		Local version of date					12/31/18	
+%X		Local version of time					17:41:00	
+%%		A % character						%	
+%G		ISO 8601 year						2018	
+%u		ISO 8601 weekday 					(1-7)	1	
+%V		ISO 8601 weeknumber 					(01-53)	01
+
+---------------------------------------------------------------------------------------
+
+import datetime
+
+x = datetime.datetime.now()
+
+print(x.year)
+print(x.strftime("%A"))
+
+-----------------------------------------------
+
+import datetime
+
+x = datetime.datetime(2018, 6, 1)
+
+print(x.strftime("%B"))
+
+-----------------------------------------------
+import datetime
+a=int(input("Enter the Year"))
+b=int(input("Enter the Month"))
+c=int(input("Enter the Day"))
+x = datetime.datetime(a, b, c)
+
+print("Current Day",x.strftime("%A"))
+
+-----------------------------------------------------------------------------------------------------------
+from datetime import date
+
+my_date = date.today()
+
+print("Date passed as argument is", my_date)
+
+
+------------------------------------------------------
+
+
+from datetime import date
+
+# calling the today
+# function of date class
+today = date.today()
+
+# Converting the date to the string
+Str = date.isoformat(today)
+print("String Representation", Str)
+print(type(Str))
+
+---------------------------------------------------------
+
+from datetime import datetime, timedelta
+time_now = datetime.now()
+print("initial_date", str(time_now))
+
+after_2yrs = time_now+ timedelta(days=730)
+after_2days = time_now + timedelta(days=2)
+
+print('after_2yrs:', str(after_2yrs))
+print('after_2days:', str(after_2days))
+
+
+------------------------------------------------------
+
+
+from datetime import datetime, timedelta
+
+ini_time_for_now = datetime.now()
+
+
+print("initial_date", str(ini_time_for_now))
+
+
+new_final_time = ini_time_for_now + timedelta(days=2)
+
+print("new_final_time", str(new_final_time))
+
+
+print('Time difference:', str(new_final_time - ini_time_for_now))
+
+---------------------------------------------------------
+
+from datetime import datetime
+
+# Getting current date and time
+now = datetime.now()
+print("Without formatting", now)
+
+# Example 1
+s = now.strftime("%A %m %Y")
+print('\nExample 1:', s)
+
+# Example 2
+s = now.strftime("%a %m %y")
+print('\nExample 2:', s)
+
+# Example 3
+s = now.strftime("%I %p %S")
+print('\nExample 3:', s)
+
+# Example 4
+s = now.strftime("%H:%M:%S")
+print('\nExample 4:', s)

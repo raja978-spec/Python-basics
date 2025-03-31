@@ -2917,15 +2917,105 @@ b=a[5::-2] # starts from 5th index it prints
 print(b)
 
 '''
-arr=[4,3,4,23,1,1]
 
-def binary_search(arr):
-    start, end = 0, len(arr)
+#               MODULES
+'''
+ Packages are called collection of
+ modules
 
-    while start<=end:
-        middle = start+end//2
+ modules are single file
 
-        if arr[start] < arr[middle]:
-            start+= 1
-        elif arr[end] > arr[middle]:
-            end+=1
+ NOTE: Calendar module is important for interview
+
+                  CALENDAR MODULE EXAMPLE
+        
+import calendar
+print(calendar.calendar(theyear=2025, m=2))
+
+
+---------------------Datetime--------------------------
+Directive	 Description				        Example	
+%a		     Weekday, short version			Wed	
+%A		     Weekday, full version			Wednesday	
+%w		     Weekday as a number 0-6, 
+           0 is Sunday	                3	
+%d		     Day of month 01-31			      31	
+%b		     Month name, short version		Dec	
+%B		     Month name, full version		December	
+%m		     Month as a n umber 			  01-12	12	
+%y		     Year, short version, 
+           without century	            18	
+%Y		     Year, full version	      		2018	
+%H		     Hour 00-23			            	17	
+%I		     Hour 00-12				            05	
+%p		     AM/PM					              PM	
+%M		     Minute 00-59			          	41	
+%S		     Second 00-59				          08	
+%f		     Microsecond 000000-999999		548513	
+%z		     UTC offset				            +0100	
+%Z		     Timezone				              CST	
+%j	       Day number of year 001-366		365	
+%U		     Week number of year, Sunday 
+           as the first day of week,  	00-53	52	
+%W		     Week number of year, Monday 
+           as the first day of week,   	00-53	52	
+%c		     Local version of date 
+           and time				              Mon Dec 31 17:41:00 2018	
+%C		     Century							        20	
+%x		     Local version of date					12/31/18	
+%X		     Local version of time					17:41:00	
+%%		     A % character					      	%	
+%G		     ISO 8601 year						    2018	
+%u		     ISO 8601 weekday 					(1-7)	1	
+%V		     ISO 8601 weeknumber 					(01-53)	01
+
+
+EXAMPLES:
+
+import datetime as dt
+Day = dt.datetime(2000,7,10)
+
+print('Day ', Day.strftime('%A')) # a, A day in name
+print('Month', Day.strftime('%B')) # b, B month in name
+# c Fromat current local date time like Mon Mar 31 12:49:10 2025
+print('Current local date time ', dt.datetime.now().strftime('%c'))
+print('Day number ', Day.strftime('%d')) # d day no 
+print('Micro seconds ', dt.datetime.now().strftime('%f'))
+print('Month in no', Day.strftime('%m'))
+print('Full year in no ', Day.strftime('%Y')) # y, Y year in no short and
+                                              # Full version
+
+# TIME 
+print(dt.datetime.now().strftime('%H:%M:%S:%f')) # 24 hours format
+print(dt.datetime.now().strftime('%I:%M:%S:%f')) # 12 hours format
+print(dt.datetime.now().strftime('%H:%M:%S %p')) # 24 hours with AM/PM
+
+
+
+
+                 DATE MODULE IN DATETIME
+
+from datetime import date
+print(date.today())
+
+                    BUILT IN ISO FORMATTER
+
+from datetime import datetime, date
+today = datetime(2000,1,10)
+print(today)
+print(date.isoformat(today))
+
+                      DELTA TIME
+
+Adds days, weeks, hours, minutes to current or specified datetime
+
+from datetime import datetime, date, timedelta
+import calendar
+
+today = datetime.now()
+print(calendar.calendar(theyear=2025, m=2))
+print(today + timedelta(weeks=1, days=2, hours=12, minutes=30))
+
+'''
+
+

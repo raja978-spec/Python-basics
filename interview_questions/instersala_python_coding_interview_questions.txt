@@ -23,3 +23,47 @@ def flatten(arr):
 
 arr=[[1,2,3],[5,5,4,6],[5322,32]]
 print(flatten(arr))
+
+-------------------------------------------------------------------------------------------------
+
+3. Capitalize first and last letter of a word
+
+str1='hai this is sample string'
+
+str_list = str1.split(' ')
+new_str_list = []
+for i in str_list:
+    for j in i.split():
+      j=j.replace(j[0], j[0].upper())
+      j=j.replace(j[len(i)-1], j[len(i)-1].upper())
+      new_str_list.append(j)
+
+result = ' '.join(new_str_list)
+print(result)
+
+-------------------------------------------------------------------------------------------
+
+4. Perfect number
+
+   if a number's sum of divisors is equal to the number is called
+   Perfect number.
+
+   EX: 6 has 1+2+3 as it divisors, sum is 6==6 so Perfect
+
+n=int(input('n: '))
+divisor=0
+for i in range(1,n-1):
+    if n%i == 0:
+        print(i)
+        divisor+=i 
+if(divisor==n):
+    print(n,'is a perfect number')
+else:
+    print(n,'is not a perfect number')
+        
+--------------------------------------------------------------------------------------
+
+5. Strong number
+
+   1! + 4! + 5! = 145 is called Strong number
+   
