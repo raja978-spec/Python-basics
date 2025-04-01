@@ -1,0 +1,19 @@
+1. Write a program to print the calendar of a specific month and year entered by the user.
+
+Create a program to determine whether a given year is a leap year using the calendar module.
+
+Build a script to display all months of the current year along with their starting weekdays.
+
+Write a program to find and print the month with the maximum number of days in a given year.
+
+Create a script to display the calendar of the current month with today’s date highlighted.
+
+Write a program to calculate the total number of weekdays and weekends in a specific year.
+
+Build a program to display the week number of a specific date provided by the user.
+
+Write a script to determine the last day of a specific month in a given year.
+
+Create a program to generate a list of all Mondays for the next 3 months.
+
+Write a script to find out the number of days in a particular month of a given year.

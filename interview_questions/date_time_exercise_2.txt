@@ -1,0 +1,66 @@
+
+1. Write a program to display the current date and time in the format: "YYYY-MM-DD HH:MM:SS".
+
+import datetime as dt
+print(dt.datetime.now().strftime('%Y-%m-%d %I:%M:%S %p'))
+
+------------------------------------------------------------------------------------------------------------------------
+
+2. Create a program that calculates and displays your age in years, months, and days based on your birthdate.
+
+import datetime as dt
+year=int(input('Enter the year you borned: '))
+month= int(input('Enter the month you borned: '))
+day= int(input('Enter the day you borned: '))
+
+today = dt.datetime.now()
+
+birth_date = dt.datetime(year, month, day)
+
+# Calculate age
+age_years = today.year - birth_date.year
+age_months = today.month - birth_date.month
+age_days = today.day - birth_date.day
+print(age_years, age_months, age_days)
+if age_days < 0:
+    age_months -= 1
+    age_days += 30  # Approximation
+if age_months < 0:
+    age_years -= 1
+    age_months += 12 
+     
+print(f"Your age is {age_years} years, {age_months} months, and {age_days} days.")
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a script that takes two dates as input and calculates the number of days between them.
+
+
+import datetime as dt
+
+d1=input('Date 1 in YYYY/MM/DD fomart: ')
+d2=input('Date 2 in YYYY/MM/DD fomart: ')
+
+def extract_date(str):
+    year, month, day = str.split('/')
+    date = dt.datetime(int(year), int(month), int(day))
+    return date
+
+days = abs((extract_date(d1) - extract_date(d2)))
+print(days)
+
+---------------------------------------------------------------------------------------------------
+
+Build a program to find the day of the week for any given date entered by the user.
+
+Write a program to display the time exactly 30 minutes from the current time using timedelta.
+
+Create a script that determines the current week number of the year.
+
+Write a program to display the name of the next 7 days (starting from today).
+
+Build a program to check if today is a weekend or a weekday.
+
+Write a script that calculates the time remaining until the user's next birthday.
+
+Create a program to list all Fridays of the current month.

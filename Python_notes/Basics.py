@@ -2225,6 +2225,15 @@ l=[1,2,3,4,5]
 m=list(map(lambda x:x**2, l))
 print(m)
 
+                         UNPACKING MAP ELEMENT WITHOUT LIST
+                  
+user_input= map(int, input('Type number'))
+print(*user_input)
+
+OUTPUT:
+Type number324
+3 2 4
+
 '''
 
 #                     FILTER
@@ -2990,6 +2999,21 @@ print(dt.datetime.now().strftime('%H:%M:%S:%f')) # 24 hours format
 print(dt.datetime.now().strftime('%I:%M:%S:%f')) # 12 hours format
 print(dt.datetime.now().strftime('%H:%M:%S %p')) # 24 hours with AM/PM
 
+print('Month of year', today.strftime('%B'))# Months name
+print('Week number of the year ', today.strftime('%W')) # 52 weeks a year 
+print('Week day of the week ', today.strftime('%A'))# Week name of week
+print('Day of the year ', today.strftime('%j'))# Day no of year
+print('Day of month ', today.strftime('%d'))# Day no of month
+print('Day of week ', today.strftime('%w')) # Day no of week
+
+OUTPUT:
+Month of year March
+Week number of the year  13
+Week day of the week  Monday
+Day of the year  090
+Day of month  31
+Day of week  1
+
 
 
 
@@ -3016,6 +3040,84 @@ today = datetime.now()
 print(calendar.calendar(theyear=2025, m=2))
 print(today + timedelta(weeks=1, days=2, hours=12, minutes=30))
 
+
+              DATE TIME ARTHMETIC OPERATIONS
+
+
+minus only can be used between two date object to find the difference
+between two date's day
+
+Addition can only be donw with timedelta
+
+>, < are used between two date object
+
+Unsupported Operations:
+
+Addition Between Dates: Direct addition of two date objects is 
+not supported because the result wouldn't make logical sense.
+
+Multiplication/Division: These operations are not meaningful for 
+date objects.
+
+
+                            EX FOR MINUS OPERATION:
+
+import datetime as dt
+
+d1=dt.datetime(1963, 6, 23)
+d2=dt.datetime(2000, 7, 10)
+print(abs(d1-d2)) # prints difference of dates
+
+OUTPUT:
+13532 days, 0:00:00
+
+print(abs(d1-d2).days) #13532
+
+
+                              STRP TIME FUNCTION
+
+Helps to get date in any format from user and converts to original
+date time object format.
+
+from datetime import datetime, timedelta
+user_input=input('Enter date in this Jul 1 2014 2:43PM format: ')
+formated_user_input = datetime.strptime(user_input, '%b %d %Y %I:%M%p')
+
+OUTPUT:
+Enter date in this Jul 1 2014 2:43PM format: Jul 1 2014 2:43pm
+2014-07-01 14:43:00
+
+
+                 DATE TIME COMBINE FUNCTION
+
+Helps to combine time to a date
+
+from datetime import datetime, date
+only_date = date(2021,3,23)
+result = datetime.combine(only_date, datetime.min.time())
+print(result)
+
+OUTPUT:
+2021-03-23 00:00:00
+
+                                 FROM ISO CALENDAR FUNCTION
+
+Helps to get a date by the week no of year
+
+NOTE: According to ISO CALENDAR Monday is the starting day of week not sunday
+      So the starting value 1 represents monday
+
+EX:
+
+Below program gets the monday date from week 50
+
+from datetime import *
+year,week = 2015, 50 # 50 is the week no of year
+print(datetime.fromisocalendar(year, week, 1)) # gets the monday
+
 '''
+
+# Sample Dates : 2000,2,28, 2001,2,28
+# Expected Output : Mon Dec 14 00:00:00 2015
 
 
