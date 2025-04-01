@@ -335,3 +335,95 @@ for i in range(1, n+1):
     print()
 
 '''
+
+#                 BINARY PATTER
+#                   17
+'''
+0 1 0 1 0
+1 0 1 0 1
+0 1 0 1 0
+1 0 1 0 1
+0 1 0 1 0
+
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(0, n):
+        if i%2==0:
+            if j%2==0:
+                print(0, end=' ')
+            else:
+                print(1, end=' ')
+        elif i%2 != 0:
+            if j%2==0:
+                print(1, end=' ')
+            else:
+                print(0, end=' ')
+    print()
+
+'''
+
+#                 18
+'''
+n: 5
+1 0 1 0 1
+0 0 0 0 0
+1 0 1 0 1
+0 0 0 0 0
+1 0 1 0 1
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(0, n):
+        if i%2==0:
+            if j%2==0:
+                print(1, end=' ')
+            else:
+                print(0, end=' ')
+        elif i%2 != 0:
+            print(0, end=' ')
+    print()
+
+'''        
+
+#             19
+
+'''
+n: 5
+1 1 1 1 1
+0 0 0 0 0
+1 1 1 1 1
+0 0 0 0 0
+1 1 1 1 1
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(0, n):
+        if i%2==0:
+            print(1, end=' ')
+        elif i%2 != 0:
+            print(0, end=' ')
+    print()
+
+'''   
+
+#                  20
+'''
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+
+n=int(input('n: '))
+for i in range(0, n):
+    for j in range(0, n):
+        if j%2==0:
+            print(0, end=' ')
+        elif j%2 != 0:
+            print(1, end=' ')
+    print()
+
+'''
+
+#    21 Opposite version of 20
