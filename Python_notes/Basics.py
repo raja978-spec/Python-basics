@@ -2270,7 +2270,17 @@ m=reduce(lambda x,y:x*y, l)
 print(m)
 
 OUTPUT: 120
+
 '''
+
+#               CHR BUILT IN FUNCTION
+'''
+Used to print alphabet of the integer
+
+for i in range(65, 90):
+    print(chr(i), end='')
+'''
+
 #              OPERATORS
 '''
  ------------------Operators Types:-------------------
@@ -2896,6 +2906,12 @@ isalnum()
 isnumeric()
 isupper()
 islower()
+
+
+                UNPACKING STRING INPUT WITH *
+
+user_input= input('Enter no: ')
+print(*user_input) # returns tuple
            
 '''
 
@@ -3117,7 +3133,27 @@ print(datetime.fromisocalendar(year, week, 1)) # gets the monday
 
 '''
 
-# Sample Dates : 2000,2,28, 2001,2,28
-# Expected Output : Mon Dec 14 00:00:00 2015
+def find_each_no_fact(*n):
+    result = 0
+    def fact(no):
+      factorial = 1
+      for i in range(1,no+1):
+          factorial*=i 
+      return factorial   
+    
+    for i in n:
+        fact_result =  fact(int(i))
+        result += fact_result
+        print(f'fact for {i} is {fact_result}')
+    return result
 
+def is_strong_number(no, no_want_compare):
+    if no == no_want_compare:
+        return True
+    return False
+    
 
+if is_strong_number(int(user_input), sumed_factor):
+    print(user_input, 'is a strong no')
+else:
+    print(user_input,'is not a strong no')

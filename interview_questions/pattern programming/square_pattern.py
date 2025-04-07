@@ -427,3 +427,28 @@ for i in range(0, n):
 '''
 
 #    21 Opposite version of 20
+
+#               ABC SQUARE PATTER 22
+'''
+A B C D E
+F G H I J
+K L M N O
+P Q R S T
+U V W X Y
+
+n=int(input('n: '))
+alphaint = 65
+for i in range(n):
+    for j in range(n):
+        print(chr(alphaint), end=' ')
+        alphaint+=1
+    print()
+    # print('65 66 67 68 69')
+    # print('70 71 72 73 74')
+
+'''
+
+#                 23
+'''
+
+'''
