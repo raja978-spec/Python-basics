@@ -2943,7 +2943,7 @@ print(b)
 
 '''
 
-#               MODULES
+#               MODULES(DateTime, Calendar)
 '''
  Packages are called collection of
  modules
@@ -2956,6 +2956,16 @@ print(b)
         
 import calendar
 print(calendar.calendar(theyear=2025, m=2))
+
+
+          ACCESSING MONTH NAME AND WEEK NAME IN CALENDAR MODULE
+
+import calendar as cl
+from datetime import *
+
+months = list(cl.month_name)
+days = list(cl.day_name)
+
 
 
 ---------------------Datetime--------------------------
@@ -3132,28 +3142,3 @@ year,week = 2015, 50 # 50 is the week no of year
 print(datetime.fromisocalendar(year, week, 1)) # gets the monday
 
 '''
-
-def find_each_no_fact(*n):
-    result = 0
-    def fact(no):
-      factorial = 1
-      for i in range(1,no+1):
-          factorial*=i 
-      return factorial   
-    
-    for i in n:
-        fact_result =  fact(int(i))
-        result += fact_result
-        print(f'fact for {i} is {fact_result}')
-    return result
-
-def is_strong_number(no, no_want_compare):
-    if no == no_want_compare:
-        return True
-    return False
-    
-
-if is_strong_number(int(user_input), sumed_factor):
-    print(user_input, 'is a strong no')
-else:
-    print(user_input,'is not a strong no')
