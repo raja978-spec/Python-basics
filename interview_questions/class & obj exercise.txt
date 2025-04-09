@@ -1,0 +1,69 @@
+class and object example:
+
+1) create a class called student
+create a variable = name and register number using constructor
+create a function called display which should display the name and display the name and register number of the student.
+
+class student:
+    def __init__(self, name, register_no):
+        self.name = name
+        self.register_no = register_no
+    def display(self):
+        print(self.name, self.register_no)
+
+----------------------------------------------------------------------------------------
+
+2) create a class called fruit
+create a variable called color using init method
+create a object called apple "pass the color varaiable as parameter through object".
+
+class fruit:
+    def __init__(self, color):
+        self.color = color
+    
+apple = fruit('red')
+
+----------------------------------------------------------------------------------------
+
+3) create a class called teacher
+create a variable = name and register number using constructor
+create a function called display which should display the name and display the name and register number of the teacher.
+creat t1 and t2 object and pass the name and regno value through object.
+
+class teacher:
+    def __init__(self, name, r_no):
+        self.name = name
+        self.reg_no= r_no
+    def display(self):
+        print(self.name, self.reg_no)
+
+t1 = teacher('t1','001')
+t2 = teacher('t2','002')
+
+------------------------------------------------------------------------------------------
+
+4)create a class called calculator.
+create 2 variables a and b
+create a function called add,sub,mul,div.all function should take 2 variables as a parameter.
+pass the a and b value through the object().
+
+--------------------------------------------------------------------------------------
+
+Inheritance and polymorphism example:
+
+1)create a base class called shape with a method area() that return 0. 
+create a derived class called rectangle that inherit from shape and overrides the area() method to calculate
+and return the area of a rectangle.
+
+2)create a base class called person with a constructor that takes a name as a parameter.
+create a derived class called student that inherit from person and has a constructor that takes a parameter called grade.
+write a method in student to display the name and grade of the student.use super keyword to achieve this.
+
+3) create a base class called vehicle with a metod start() that prints "vechicle started" .
+create a derived class called car that inherits from vechicle and overrides the start()
+method to print " car started ".
+
+4)create a base class called Employee with properties name and salary.create a derived class called manager
+that inherit from employee and adds a property department.write a method in manager to displey the name,salary,and department of the manager.
+
+
