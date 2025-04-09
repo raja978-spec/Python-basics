@@ -402,6 +402,7 @@ set(['c', 'e', 'H', 'n', 'r', 'R'])
         return self.name
  obj = add
  print(obj("Raja"))
+
 '''
 #        GLOBAL,PROTECTED,PRIVATE ATTRIBUTE
 '''
@@ -2786,6 +2787,16 @@ print("Dictionary",dic)
 OUTPUT:
 Dictionary {'Name': 'Akash', 'age': '23', 'Age': '21', 'Course': 'DS'}
 
+
+                        MERGING TWO DICT WITH **
+
+a={'a':1}
+b={'b':2}
+c={**b, **a}
+print(c)
+
+OUTPUT:
+{'b': 2, 'a': 1}
 '''
 
 
@@ -3141,4 +3152,35 @@ from datetime import *
 year,week = 2015, 50 # 50 is the week no of year
 print(datetime.fromisocalendar(year, week, 1)) # gets the monday
 
+'''
+
+#                   CLASSES AND OBJECTS, CONSTRUCTRO
+'''
+Class is a blue print of object, object is instance of class, Constructor
+is used to initlize a value of a object.
+
+Constructed init value, parametrize constructor value.
+
+
+                              SELF KEYWORD USE
+
+class college:
+    att1='hello'
+    def __init__(self,n):
+        name= n
+
+stu1=college('reja')
+print(stu1.name) # name is accssed without the reference of object
+                 # itself, that is self
+
+
+                  CORRECT EXAMPLE FOR SELF
+
+class college:
+    att1='hello'
+    def __init__(self,n):
+        self.name=n
+
+stu1=college('reja')
+print(stu1.name)
 '''
