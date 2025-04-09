@@ -1,11 +1,21 @@
 1. Write a program to print the calendar of a specific month and year entered by the user.
 
-Create a program to determine whether a given year is a leap year using the calendar module.
+2. Create a program to determine whether a given year is a leap year using the calendar module.
 
-Build a script to display all months of the current year along with their starting weekdays.
+3. Build a script to display all months of the current year along with their starting weekdays.
 
-Write a program to find and print the month with the maximum number of days in a given year.
+4. Write a program to find and print the month with the maximum number of days in a given year.
 
+import calendar as cl
+
+no_of_days_in_month = [cl.monthrange(2025, i)[1] for i in range(1,12)]
+max=no_of_days_in_month[0]
+for i in no_of_days_in_month:
+    if i > max:
+        max= i
+
+print(max)
+----------------------------------------------------------------------------------------
 Create a script to display the calendar of the current month with today’s date highlighted.
 
 Write a program to calculate the total number of weekdays and weekends in a specific year.

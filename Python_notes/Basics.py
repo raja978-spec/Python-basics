@@ -3184,3 +3184,4 @@ class college:
 stu1=college('reja')
 print(stu1.name)
 '''
+
