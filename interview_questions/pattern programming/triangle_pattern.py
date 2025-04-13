@@ -111,3 +111,20 @@ for i in range(1, n+1):
     print(' '*(n-i), chr(aplhabet_range-1)*i)
     aplhabet_range-=1
 '''
+
+#                   Hollow Square Pattern
+'''
+*****
+*   *
+*   *
+*   *
+*****
+
+n=int(input('n: '))
+for i in range(1,n+1):
+    if(i==1) or (i==n):
+       print('*'*n)
+    else:
+        print('*'+ ' '*(n-2)+ "*")
+
+'''
