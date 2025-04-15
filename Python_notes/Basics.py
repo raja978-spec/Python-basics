@@ -3185,3 +3185,37 @@ stu1=college('reja')
 print(stu1.name)
 '''
 
+#              INHERITANCE
+'''
+1. Single inheritance -  one class
+2. Multiple inheritance - inherit more than two class
+class add:
+      pass
+class sub():
+      pass
+class sub(add, sub):
+      pass
+
+3. Multi level  - Child class become parent for other class.
+class add:
+      pass
+class sub(add):
+      pass
+class mul(sub):
+      pass
+
+4. Hierarchical inheritance - one single class become parent
+                              for more than two child
+
+class add:
+      pass
+class sub(add):
+      pass
+class mul(add):
+      pass
+class div(add):
+      pass
+      
+5. Hybrid - combination of hierarchy and multiple inheritance
+                          
+'''
