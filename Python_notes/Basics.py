@@ -3219,3 +3219,63 @@ class div(add):
 5. Hybrid - combination of hierarchy and multiple inheritance
                           
 '''
+
+#               OPERATOR OVERLOADING
+'''
+Used to overload the arthimetic operation performed 
+between object, all the operator has dunder methods in class
+
+1. +  - __add__()
+2. -  - __sub__()
+
+EX:
+
+class a:
+    a=1
+    b=2
+    def __floordiv__(self, x):
+        print(x.value() - self.a)
+class b:
+    def value(self):
+        return 3
+    
+obj1=a()
+obj2=b()
+obj1//obj2
+'''
+#                  ENCAPSULATION
+'''
+Wrapping data into single unit called class
+Three access modifiers
+1. public
+2. private - double underscore, can't be accessed on other 
+              class and by object
+3. protected - can be accssed inheritaed class and by object,
+               but it is not recommanded to access it by object
+
+EX:
+
+class a:
+    _a=1 # protected
+    __b=2 # private
+class b(a):
+    def _value(self):
+        pass
+        #print(3- self._a)
+        #print(3- self.__b) # raise error 
+        #AttributeError: 'b' object has no attribute '_b__b'. Did you mean: '_a__b'?
+
+obj=b()
+obj._value()
+obj1 = a()
+#print(obj1._a)
+#print(obj1.__b)# Raises error
+'''
+
+#                  ABSTRACTION
+'''
+Process of hiding implementation details from user
+Like a class's function can be imported and used in
+another module.
+
+'''
