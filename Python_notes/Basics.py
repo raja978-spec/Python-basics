@@ -3097,7 +3097,7 @@ Multiplication/Division: These operations are not meaningful for
 date objects.
 
 
-                            EX FOR MINUS OPERATION:
+                            EX FOR MINUS OPERATION WITH DAYS:
 
 import datetime as dt
 
@@ -3109,6 +3109,34 @@ OUTPUT:
 13532 days, 0:00:00
 
 print(abs(d1-d2).days) #13532
+
+
+                    MINUS OPERATION WITH TOTAL SECONDS
+
+Total seconds gives the difference between on datetime and another
+date time
+
+EX:
+
+t1 - Sat 02 May 2015 19:54:36 +0530
+t2 - Fri 01 May 2015 13:54:36 -0000
+
+Assume above is the time passed to function t2 has 1 day difference
+from t2, if we want to print the total seconds diffecnec then this
+are used.
+
+def extract_date_time_from_input(t):
+    result = datetime.strptime(t,'%a %d %b %Y %X %z')
+    return result
+     
+# Complete the time_delta function below.
+def time_delta(t1, t2):
+    T1 = extract_date_time_from_input(t1)
+    T2 = extract_date_time_from_input(t2) 
+    
+    result = abs(int((T1-T2).total_seconds()))
+    return str(result)
+
 
 
                               STRP TIME FUNCTION
