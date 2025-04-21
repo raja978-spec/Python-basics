@@ -8,7 +8,6 @@
 
 
 '''
-
 #                 2
 '''
 1 2 3 4 5
@@ -38,4 +37,23 @@ for i in range(n):
         step = 1
 
 '''
-    
+
+n=int(input('n: '))
+
+right=0
+left=n-1
+
+'''
+      5
+   19 6
+25 20 7
+   21 8
+      9
+'''
+top=n+1
+bottom=n+n
+
+dp=[[0]*n for i in range(n)]
+
+for i in range(top, bottom):
+    print(' '*(n-i+1)+f'{top}')
