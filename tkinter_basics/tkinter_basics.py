@@ -46,12 +46,14 @@ e4.place(x=400, y=250)
 e5 = Entry(w,font=inputfnt, background='white', fg='black')
 e5.place(x=400, y=300)
 def show_message():
+    global r_result
+    r_result = ''
     if r_var.get() == 1:
-        messagebox.showinfo('Radio Button Result',male_r.cget('text'))
+        r_result = male_r.cget('text')
     elif r_var.get() == 2:
-        messagebox.showinfo('Radio Button Result',female_r.cget('text'))
+        r_result = female_r.cget('text')
     elif r_var.get() == 3:
-        messagebox.showinfo('Radio Button Result',others_r.cget('text'))
+        r_result = others_r.cget('text')
     
     result = []
     if cbvar1.get() == 1:
@@ -64,15 +66,22 @@ def show_message():
         result.append(cb3.cget('text'))
         print(3)
     
-    messagebox.showinfo('Check box result',' '.join(result))
 
     t1 = e1.get()
     t2 = e2.get()
     t3 = e3.get()
     t4 = e4.get()
     t5 = e5.get()
-    concat_txt= f'{t1} {t2} {t3} {t4} {t5}'
-    messagebox.showinfo('Result', concat_txt)
+    concat_txt= f'''
+    Name: {t1} 
+    Age: {t2} 
+    Salary: {t3} 
+    Department: {t4} 
+    Designation: {t5}
+    Gender: {r_result}
+    Language knows: {','.join(result)}
+    '''
+    messagebox.showinfo('Information', concat_txt)
 
 def clear_message():
     e1.delete(0, END)
