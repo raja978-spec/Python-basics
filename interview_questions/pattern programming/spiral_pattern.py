@@ -40,20 +40,51 @@ for i in range(n):
 
 n=int(input('n: '))
 
-right=0
-left=n-1
-
-'''
-      5
-   19 6
-25 20 7
-   21 8
-      9
-'''
-top=n+1
-bottom=n+n
+right=n-1
+left=0
 
 dp=[[0]*n for i in range(n)]
 
+for i in range(left, right):
+    dp[0][i] = i+1
+
+for i in range(n):
+    dp[i][n-1]=n+i
+
+value = n+n+len(dp[n-1][:n-2])
+for i in range(n-1):
+    dp[n-1][i] = value
+    value-=1
+
+top=1
+bottom=n-1
+value = bottom-1
 for i in range(top, bottom):
-    print(' '*(n-i+1)+f'{top}')
+    value += 1
+for i in range(top, bottom):
+    dp[i][0] = n+n+value
+    value-=1
+
+value = dp[1][0]+1
+for i in range(1,n-1):
+    dp[1][i] = value
+    value+=1
+
+value = dp[1][n-2]+1
+for i in range(2,n-1):
+    dp[i][n-2]= value
+    value+=1
+
+value = dp[3][n-2]+2
+for i in range(1,n-2):
+    dp[3][i]= value
+    value-=1
+
+value = dp[3][1]+1
+for i in range(1,n-2):
+    dp[2][i]= value
+    value+=1
+
+for i in range(n):
+    #print(' '.join(dp[i]), end='/n')
+    print(' '.join(str(j) for j in dp[i]), end='\n')
