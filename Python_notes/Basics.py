@@ -96,6 +96,17 @@ returns the dictionary of all keywords in python
 '''
  In python name space used to create unique object names
  for function and class. Name space is nothing but indendation.
+
+ It is mainly used to avoid naming conflicts in a code.
+
+ EX:
+ 
+x = 5
+
+def func():
+    x = 10  # This 'x' is different from the global 'x' — potential naming conflict
+
+
  There are 3 types of name_space
   1. Local namespace  - A name that is created inside the current file's function.
   2. Global namespace - It is also a function's name that is created in various 
@@ -3305,6 +3316,4 @@ obj1 = a()
 Process of hiding implementation details from user
 Like a class's function can be imported and used in
 another module.
-
 '''
-
