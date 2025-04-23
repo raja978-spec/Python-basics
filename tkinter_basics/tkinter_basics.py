@@ -41,8 +41,21 @@ day_spinner.place(x=400, y=150)
 month_spinner = Spinbox(w,width=3,font=inputfnt, from_=1, to=12)
 month_spinner.place(x=460, y=150)
 
-year_spinner = Spinbox(w,width=6,font=inputfnt, from_=2000, to=3000)
+
+###################################PROBLEM PART#############################################
+def year_func():
+    error = Label(text='You reached the year limit', fg='red', bg='black', font=inputfnt)
+    
+    if int(year_spinner.get()) >= int(year_spinner.cget('to')):
+        error.place(x=600, y=150)
+    else:
+        print('else')
+        error.destroy()
+
+year_spinner = Spinbox(w,width=6,font=inputfnt, from_=2000, to=3000, command=year_func, state='readonly')
 year_spinner.place(x=520, y=150)
+#######################################################################################
+
 
 e3 = Entry(w,font=inputfnt, background='white', fg='black',borderwidth=2)
 e3.place(x=400, y=200)
