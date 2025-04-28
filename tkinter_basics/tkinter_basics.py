@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter.font import Font
 from tkinter import messagebox
 from tkinter import ttk
+from tkinter import filedialog
 
 w = Tk()
 
@@ -44,21 +45,22 @@ month_spinner.place(x=460, y=150)
 
 ###################################PROBLEM PART#############################################
 def year_func():
-    error = Label(text='You reached the year limit', fg='red', bg='black', font=inputfnt)
-    
+    error = Label(w,text='You reached the year limit', fg='red', bg='black', font=inputfnt)
+    error.place(x=600, y=150)
     if int(year_spinner.get()) >= int(year_spinner.cget('to')):
-        error.place(x=600, y=150)
+        print('if')
     else:
         print('else')
         error.destroy()
-
-year_spinner = Spinbox(w,width=6,font=inputfnt, from_=2000, to=3000, command=year_func, state='readonly')
+year_spinner = Spinbox(w,width=6,font=inputfnt, from_=2000, to=3000, command=year_func)
 year_spinner.place(x=520, y=150)
 #######################################################################################
 
 
 e3 = Entry(w,font=inputfnt, background='white', fg='black',borderwidth=2)
 e3.place(x=400, y=200)
+saved_info = ''
+saved_info_date = ''
 
 def show_message():
     global r_result
@@ -93,7 +95,79 @@ def show_message():
     Gender: {r_result}
     Language knows: {','.join(result)}
     '''
+    saved_info += concat_txt
+    import datetime as dt
+    saved_info_date += f"{dt.datetime.now('%c')}"
     messagebox.showinfo('Information', concat_txt)
+
+def show_edit_box():
+    global r_result
+    r_result = ''
+    if r_var.get() == 1:
+        r_result = male_r.cget('text')
+    elif r_var.get() == 2:
+        r_result = female_r.cget('text')
+    elif r_var.get() == 3:
+        r_result = others_r.cget('text')
+    
+    result = []
+    if cbvar1.get() == 1:
+        result.append(cb1.cget('text'))
+    if cbvar2.get() == 1:
+        result.append(cb2.cget('text'))
+    if cbvar3.get() == 1:
+        result.append(cb3.cget('text'))
+    
+    age = f'{day_spinner.get()}/{month_spinner.get()}/{year_spinner.get()}'
+    department = department_dropdown_box.get()
+    
+    t1 = e1.get()
+    t3 = e3.get()
+    t5 = e5.get()
+    concat_txt= f'''
+    Name: {t1} 
+    DOB: {age} 
+    Salary: {t3} 
+    Department: {department} 
+    Designation: {t5}
+    Gender: {r_result}
+    Language knows: {','.join(result)}
+    '''
+    tp = Toplevel(w)
+    result_l = Label(tp,text='Your entered details')
+    result_l.pack()
+    text = Text(tp)
+    text.insert(END,concat_txt)
+    text.pack()
+    menu_bar = Menu(w)
+    f_menu = Menu(menu_bar,tearoff=0)
+    
+    def save_content():
+        file = filedialog.asksaveasfile(mode="w", defaultextension=".txt", filetypes=[("Text Documents", "*.txt"), ("All Files", "*.*")])
+        if file:
+            contents = text.get("1.0", "end")
+            file.write(contents)
+            file.close()
+
+    def open_file_content():
+        file = filedialog.askopenfile(mode="rb", title="Open a file")
+        if file:
+            contents = file.read()
+            
+            text.delete("1.0", "end")
+            text.insert("1.0", contents)
+            file.close()
+                    
+    f_menu.add_command(label='Open', command=open_file_content)
+    f_menu.add_command(label='Save', command=save_content)
+    menu_bar.add_cascade(label='File', menu=f_menu,
+                     activebackground='black')
+    
+    
+    tp.geometry('500x500')
+    tp.title('Edit form')
+    tp.config(background='black', menu=menu_bar)
+    tp.mainloop()
 
 department_dropdown_box = ttk.Combobox(w, width=18,font=inputfnt, state='readonly')
 department_dropdown_box['values'] = ('HR','Finance','IT','Marketing','Sales','Operations')
@@ -159,12 +233,44 @@ show = Button(w,text='Submit', font=btnfont, bg='white', fg='black',
               )
 show.place(x=400, y=550)
 
+submit_and_edit = Button(w,text='Submit & Edit', font=btnfont, bg='white', fg='black',
+              command=show_edit_box,
+              activebackground='black'
+              )
+submit_and_edit.place(x=500, y=550)
+
 clear = Button(w,text='Clear', font=btnfont, bg='white', fg='black',
               command=clear_message,
                activebackground='black')
-clear.place(x=550, y=550)
+clear.place(x=680, y=550)
 
-w.geometry("1000x700")
+import os
+file_names = ''
+for i in os.listdir(os.curdir):
+    if i.endswith('.txt'):
+        file_names = i + '\n'
+nb = ttk.Notebook(w)
+f1 = Frame(nb, highlightcolor='green', highlightbackground='green', highlightthickness=2)
+f1.pack()
+l1 = Label(f1,text='Current dir saved file count', background='black',fg='white')
+l1.grid(columnspan=1)
+l2 = Label(f1,text=len(os.listdir(os.curdir)), background='black',fg='white')
+l2.grid(columnspan=2)
+nb.add(f1, text='show saved info')
+
+f2 = Frame(nb, highlightcolor='red', highlightbackground='red', highlightthickness=2)
+f2.pack()
+l3 = Label(f2,text='Current dir file names', background='black',fg='white')
+l3.grid(columnspan=1)
+l4 = Label(f2,text=file_names, background='black',fg='white')
+l4.grid(columnspan=2)
+
+nb.add(f1, text='show saved info')
+
+nb.add(f2, text='show saved info details')
+nb.place(x=700, y=400)
+
+w.geometry("1000x650")
 w.config(bg='black')
 w.mainloop()
 

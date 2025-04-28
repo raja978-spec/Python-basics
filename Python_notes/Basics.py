@@ -2407,15 +2407,15 @@ print(a is b) # True Compares exact value
 
 Precedence	    Operator	        Description
 1 (Highest)	      ()	       Parentheses (Grouping)
-2	              **	       Exponentiation
-3	            +x, -x, ~x	Unary Plus, Unary Minus, Bitwise NOT
-4	            *, /, //, %	Multiplication, Division, Floor Division, Modulus
-5	+, -	Addition, Subtraction
-6	<<, >>	Bitwise Left and Right Shift
-7	&	Bitwise AND
-8	^	Bitwise XOR
-9	`	`
-10	==, !=, >, >=, <, <=	Comparison Operators
+2	                **	         Exponentiation
+3	            +x, -x, ~x	   Unary Plus, Unary Minus, Bitwise NOT
+4	            *, /, //, % 	 Multiplication, Division, Floor Division, Modulus
+5	               +, -	       Addition, Subtraction
+6	              <<, >>	     Bitwise Left and Right Shift
+7	                &	         Bitwise AND
+8	                ^	         Bitwise XOR
+9	               `	`
+10	   ==, !=, >, >=, <, <=	Comparison Operators
 11	is, is not, in, not in	Identity & Membership Operators
 12	not	Logical NOT
 13	and	Logical AND
@@ -3316,4 +3316,5 @@ obj1 = a()
 Process of hiding implementation details from user
 Like a class's function can be imported and used in
 another module.
+
 '''
