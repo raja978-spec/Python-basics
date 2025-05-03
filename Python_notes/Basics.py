@@ -3318,3 +3318,29 @@ Like a class's function can be imported and used in
 another module.
 
 '''
+
+#                    CONNECTING MYSQL
+'''
+pip install mysql.connector needs to be installed to connect with mysql
+
+If we want to connect workbench then we need to sepcify root as port
+'''  
+import mysql.connector
+con = mysql.connector.connect(host='localhost',user='root', password='',database='food_delivery')
+cur = con.cursor() # used to access the database tables
+
+id=1
+user=input("name: ")
+# Here %s is the placeholder for the data
+query = "INSERT INTO customer(customer_id, cust_name) values(%s, %s)"
+
+cur.execute(query, (id, user))
+con.commit() # Saves the inserted updated data
+
+
+#              FETCH ALL, ONE, MANY IN 
+'''
+All - all record
+One - first row
+Many - First 10 record
+'''
