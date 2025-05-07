@@ -3324,7 +3324,7 @@ another module.
 pip install mysql.connector needs to be installed to connect with mysql
 
 If we want to connect workbench then we need to sepcify root as port
-'''  
+
 import mysql.connector
 con = mysql.connector.connect(host='localhost',user='root', password='',database='food_delivery')
 cur = con.cursor() # used to access the database tables
@@ -3337,10 +3337,47 @@ query = "INSERT INTO customer(customer_id, cust_name) values(%s, %s)"
 cur.execute(query, (id, user))
 con.commit() # Saves the inserted updated data
 
+'''  
+
 
 #              FETCH ALL, ONE, MANY IN 
 '''
 All - all record
 One - first row
 Many - First 10 record
+'''
+
+#         READ WRITE IN CSV AND SYS PACKAGE
+'''
+
+csv is the default package comes with python to make
+read,write operations on csv file.
+
+sys is the package helps to see the system informations
+we can see the exception messages also with the help of
+exc_info()
+
+import csv
+import sys
+
+data = [
+    ['Name','Age','Dep','Salary'],
+    ['A','21','DA','10000'],
+    ['B','22','DS','20000'],
+    ['C','23','ML','30000'],
+]
+# with open('Demo.csv','x', newline='') as file:
+#     try:
+#       csv_writer = csv.writer(file)
+#       csv_writer.writerows(data)
+#     except:
+#        print('>>>>>>>>',sys.exc_info()[0])
+
+with open('Demo.csv','r') as file:
+    try:
+      csv_reader = csv.reader(file)
+      for i in csv_reader:
+         print(i)
+    except:
+       print('>>>>>>>>',sys.exc_info()[0])
 '''
