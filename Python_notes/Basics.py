@@ -175,6 +175,7 @@ def func(a):
 print(x)
 '''
 
+
  #                NON-LOCAL KEYWORD
  # Local variabel helps to override outter function's object
 '''
@@ -3381,3 +3382,48 @@ with open('Demo.csv','r') as file:
     except:
        print('>>>>>>>>',sys.exc_info()[0])
 '''
+
+#              ABOUT UUID
+'''
+In Python, uuid is a built-in module used to generate Universally 
+Unique Identifiers (UUIDs). These are 128-bit values that are 
+globally unique, commonly used in applications like database keys, 
+session identifiers, and distributed systems.
+
+📌 Common UUID Versions and Methods in uuid Module
+Version	Method	Description
+UUID1	uuid.uuid1()	Generates a UUID based on the host ID and current time.
+UUID3	uuid.uuid3(namespace, name)	Generates a name-based UUID using MD5 hash.
+UUID4	uuid.uuid4()	Generates a random UUID.
+UUID5	uuid.uuid5(namespace, name)	Generates a name-based UUID using SHA-1 hash.
+
+import uuid
+u1 = uuid.uuid1()
+print(u1)
+
+u3 = uuid.uuid3(uuid.NAMESPACE_DNS, 'example.com')
+print(u3)
+
+u4 = uuid.uuid4()
+print(u4)
+
+u5 = uuid.uuid5(uuid.NAMESPACE_DNS, 'example.com')
+print(u5)
+
+u = uuid.uuid4()
+print(u.hex)       # 32-character hexadecimal string
+print(u.int)       # Integer value of the UUID
+print(u.bytes)     # 16-byte string
+print(str(u))      # Canonical string representation
+
+OUTPUT:
+9c009a08-2bd1-11f0-8758-a300d6d2ca04
+9073926b-929f-31c2-abc9-fad77ae3e8eb
+5f404216-b926-4b4c-a9b0-924ab8c4c9bb
+cfbff0d1-9375-5685-968c-48ce8b15ae17
+edb8a6ea331844fe9349a5db1c82a1dd
+315985803058192780214563632564643471837
+b'\xed\xb8\xa6\xea3\x18D\xfe\x93I\xa5\xdb\x1c\x82\xa1\xdd'
+edb8a6ea-3318-44fe-9349-a5db1c82a1dd
+'''      
+
