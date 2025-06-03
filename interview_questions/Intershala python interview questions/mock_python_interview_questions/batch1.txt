@@ -1,0 +1,88 @@
+What is variable? What are the rules to define in variable?
+A variable is a name that stores data in memory.
+Rules: It must start with a letter or underscore, no spaces, and can't use reserved keywords.
+Example: name = "John"
+
+What is the use of decision-making statements? What are they and explain?
+They control the flow of execution based on conditions.
+Types: if, if-else, elif, and nested if.
+Used to perform different actions based on different conditions.
+
+Write a program on given number is strong number or not?
+
+python
+Copy
+Edit
+import math  
+n = int(input("Enter a number: "))  
+if n == sum(math.factorial(int(d)) for d in str(n)):  
+    print("Strong number")  
+else:  
+    print("Not a Strong number")
+Difference between list and tuple?
+List is mutable, tuple is immutable.
+List uses [], tuple uses ().
+Lists are generally slower than tuples.
+
+What is list comprehension?
+A concise way to create lists using a single line.
+Syntax: [expression for item in iterable if condition]
+Example: [x for x in range(10) if x%2==0]
+
+Can you create a list with 1-10 even numbers?
+
+python
+Copy
+Edit
+evens = [x for x in range(1, 11) if x % 2 == 0]  
+print(evens)  # Output: [2, 4, 6, 8, 10]
+What is String?
+A string is a sequence of characters enclosed in quotes.
+It is immutable in Python.
+Example: "Hello, world!"
+
+Write a program to check whether the given string is palindrome or not?
+
+python
+Copy
+Edit
+s = input("Enter a string: ")  
+if s == s[::-1]:  
+    print("Palindrome")  
+else:  
+    print("Not Palindrome")
+What is a generator?
+A generator yields items one at a time using yield keyword.
+It is memory-efficient and used in loops or iteration.
+Example: def gen(): yield 1
+
+What do you mean by closure?
+A closure is a function with access to variables in its outer function scope.
+Even after the outer function finishes, the inner function remembers the state.
+Useful in callback or decorator functions.
+
+Where we generally use closure?
+Closures are used in decorators, callbacks, and data hiding.
+They help maintain state without using global variables.
+Useful in functional programming.
+
+What is difference between procedural oriented programming and oops?
+POP focuses on functions and procedures.
+OOP is based on classes and objects.
+OOP promotes encapsulation, inheritance, and polymorphism.
+
+What do you mean by top-down approach and bottom-up approach?
+Top-down starts from high-level modules to low-level ones.
+Bottom-up begins from low-level functions building upward.
+Used in system design and programming.
+
+What do you mean by inheritance?
+Inheritance allows a class to inherit features from another class.
+Promotes code reuse and relationship between classes.
+Example: class Child(Parent):
+
+What is difference between DELETE and TRUNCATE?
+DELETE removes rows one by one and can be rolled back.
+TRUNCATE removes all rows quickly, can't be rolled back.
+TRUNCATE resets identity; DELETE doesn't by default.
+
